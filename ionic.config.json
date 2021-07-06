@@ -1,0 +1,7 @@
+{
+  "name": "ZaonheIn",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
