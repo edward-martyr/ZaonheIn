@@ -1,22 +1,44 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './Home.css';
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonSearchbar,
+} from "@ionic/react";
+import ZyEntry from "../components/ZyEntry";
+import "./Home.css";
+
+import { useState } from "react";
 
 const Home: React.FC = () => {
+  const [searchText, setSearchText] = useState("");
+  var entries;
+  if (searchText) {
+    entries = ZyEntry(searchText);
+  } else {
+    entries = "";
+  }
+
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
-          <IonTitle>Blank</IonTitle>
+        {/* <IonToolbar>
+          <IonTitle className="title">上海音</IonTitle>
+        </IonToolbar> */}
+        <IonToolbar className="searchbar-toolbar">
+          <IonSearchbar
+            className="searchbar-input"
+            value={searchText}
+            onIonChange={(e) => setSearchText(e.detail.value!)}
+            showCancelButton="never"
+            placeholder="今朝要搜眼啥字呢？"
+            animated
+          ></IonSearchbar>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Blank</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer />
+      <IonContent fullscreen class="ion-padding">
+        {entries}
       </IonContent>
     </IonPage>
   );

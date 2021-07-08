@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Source Sans Variable";
+  src: url("../fonts/SourceSansVariable-Roman-subset.woff");
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  src: url("../fonts/SourceHanSansKVF-ExtraLight-subset.woff");
+  font-language-override: "KOR";
+}
+
+* {
+  font-family: "Source Sans Variable", "Source Han Sans Variable";
+  font-feature-settings: "palt", "trad";
+}
+
+.title {
+  font-variation-settings: "wght" 300;
+  letter-spacing: 0.1em;
+  display: inline-block;
+  transform: scale(1.1, 1);
+  transform-origin: 0 0;
+  text-align: left;
+}
+
+.searchbar-input {
+  padding-bottom: 0 !important;
+  box-shadow: none !important;
+}
+
+.searchbar-toolbar {
+  /* margin-top: -1em; */
+}

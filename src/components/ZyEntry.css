@@ -1,0 +1,52 @@
+.zydeu {
+  font-size: 150%;
+  font-variation-settings: "wght" 275;
+  z-index: 1;
+  position: absolute;
+  display: inline-block;
+  transform: scale(0.9, 1);
+  transform-origin: 0 0;
+}
+
+.zytieFaewe {
+  margin-left: 0.9em;
+  z-index: 2;
+}
+
+.dictResults {
+  margin-left: 1ex;
+}
+
+.lenyoe {
+  font-size: 75%;
+  font-variation-settings: "wght" 550;
+}
+
+.kaseh {
+  color: var(--ion-color-dark-tint);
+  font-size: 75%;
+  letter-spacing: -0.05em;
+  font-variation-settings: "wght" 475;
+  display: inline-block;
+  transform: scale(0.72, 1);
+  transform-origin: 0 0;
+  width: 138.9%;
+}
+
+.jiansy {
+  font-variation-settings: "wght" 550;
+}
+
+.zahsy {
+  color: var(--ion-color-dark-tint);
+  font-variation-settings: "wght" 350;
+}
+
+.yithi {
+  font-size: 75%;
+  font-variation-settings: "wght" 300;
+}
+
+ion-list ion-item:last-of-type {
+  --inner-border-width: 0px;
+}

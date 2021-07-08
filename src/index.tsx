@@ -4,6 +4,9 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
+import { SplashScreen } from '@capacitor/splash-screen';
+SplashScreen.hide();
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
