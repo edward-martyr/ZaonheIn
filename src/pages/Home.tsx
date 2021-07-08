@@ -7,7 +7,7 @@ import {
   IonSearchbar,
 } from "@ionic/react";
 import ZyEntry from "../components/ZyEntry";
-import "./Home.css";
+import "./Page.css";
 
 import { useState } from "react";
 
