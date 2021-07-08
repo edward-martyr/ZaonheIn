@@ -25,4 +25,18 @@ function wugniu_zaonhe_getPhinin(zy: string) {
   return [...new Set(Array.from(tshubu))];
 }
 
-export { wugniu_zaonhe_getPhinin };
+function phinins2zys(rawPhinins: string) {
+  var phinins = rawPhinins.split(" ");
+  var zys = [];
+  for (var phininInput of phinins) {
+    for (var [vaethi, ciethi, phinin, kaseh] of wugniu_zaonhe_data) {
+      if (phininInput === phinin) {
+        zys.push(vaethi);
+        zys.push(ciethi);
+      }
+    }
+  }
+  return [...new Set(Array.from(zys))].join("");
+}
+
+export { wugniu_zaonhe_getPhinin, phinins2zys };

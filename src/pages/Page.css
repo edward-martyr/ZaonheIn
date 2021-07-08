@@ -28,3 +28,8 @@
 .searchbar-toolbar {
   /* margin-top: -1em; */
 }
+
+.tsyseh {
+  font-variation-settings: "wght" 350;
+  font-size: 80%;
+}

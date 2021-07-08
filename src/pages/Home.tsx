@@ -5,19 +5,44 @@ import {
   IonTitle,
   IonToolbar,
   IonSearchbar,
+  IonRadioGroup,
+  IonRadio,
+  IonItem,
+  IonLabel,
+  IonListHeader,
+  IonList,
+  IonIcon,
 } from "@ionic/react";
 import { Keyboard } from "@capacitor/keyboard";
 import ZyEntry from "../components/ZyEntry";
-import { SeusohFaonseh } from "../components/SeusohFaonseh";
+// import { SeusohFaonseh } from "../components/SeusohFaonseh";
 import "./Page.css";
 
 import { useState } from "react";
 
+import "../components/Accordian.css";
+import { chevronDownSharp, chevronUpSharp } from "ionicons/icons";
+
+import {phinins2zys} from "../scripts/process_wugniu_zaonhe"
+
 const Home: React.FC = () => {
   const [searchText, setSearchText] = useState("");
+
+  const [seusohFaonsehRadios, setseusohFaonsehRadios] = useState([
+    <span key=""></span>,
+  ]);
+
+  const [搜索方式Clicked, set搜索方式Clicked] = useState(0);
+
+  const [chevron, setChevron] = useState(chevronDownSharp);
+
+  const [seusohBy, setSeusohBy] = useState("byZy");
+
   var entries;
+
   if (searchText) {
-    entries = ZyEntry(searchText);
+    if (seusohBy === "byZy") entries = ZyEntry(searchText);
+    else entries = ZyEntry(phinins2zys(searchText));
   } else {
     entries = "";
   }
@@ -43,7 +68,53 @@ const Home: React.FC = () => {
             animated
           ></IonSearchbar>
         </IonToolbar>
-        <SeusohFaonseh />
+
+        <IonToolbar class="accordianList">
+          <IonList>
+            <IonRadioGroup value={seusohBy}>
+              <IonListHeader
+                class="accordianTitle"
+                onMouseUp={(e: any) => {
+                  if (搜索方式Clicked === 1) {
+                    setseusohFaonsehRadios([<span key=""></span>]);
+                    set搜索方式Clicked(0);
+                    setChevron(chevronDownSharp);
+                  } else {
+                    setseusohFaonsehRadios([
+                      <IonItem
+                        key="byZy"
+                        hidden={false}
+                        onMouseUp={(e: any) => {
+                          setSeusohBy("byZy");
+                        }}
+                      >
+                        <IonLabel>漢字</IonLabel>
+                        <IonRadio value="byZy" />
+                      </IonItem>,
+                      <IonItem
+                        key="byPhinin"
+                        hidden={false}
+                        onMouseUp={(e: any) => {
+                          setSeusohBy("byPhinin");
+                        }}
+                      >
+                        <IonLabel>吳拼<span className="tsyseh">（用空格分隔，區分聲調）</span></IonLabel>
+                        <IonRadio value="byPhinin" />
+                      </IonItem>,
+                    ]);
+                    set搜索方式Clicked(1);
+                    setChevron(chevronUpSharp);
+                  }
+                }}
+              >
+                搜索方式　
+                <IonIcon icon={chevron} />
+              </IonListHeader>
+              {seusohFaonsehRadios}
+            </IonRadioGroup>
+          </IonList>
+        </IonToolbar>
+        {/*  */}
       </IonHeader>
       <IonContent fullscreen class="ion-padding">
         {entries}
