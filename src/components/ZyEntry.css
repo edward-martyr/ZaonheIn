@@ -9,22 +9,24 @@
 }
 
 .zytieFaewe {
-  margin-left: 0.9em;
   z-index: 2;
 }
 
 .dictResults {
-  margin-left: 1ex;
+  margin-left: 0.5ex;
+  border: solid var(--ion-color-medium-shade);
+  border-width: 0 0 0 1px;
+  padding-left: 0.5ex;
 }
 
 .lenyoe {
-  font-size: 75%;
+  font-size: 80%;
   font-variation-settings: "wght" 550;
 }
 
 .kaseh {
   color: var(--ion-color-dark-tint);
-  font-size: 75%;
+  font-size: 85%;
   letter-spacing: -0.05em;
   font-variation-settings: "wght" 475;
   display: inline-block;
@@ -44,7 +46,7 @@
 
 .yithi {
   font-size: 75%;
-  font-variation-settings: "wght" 300;
+  font-variation-settings: "wght" 350;
 }
 
 ion-list ion-item:last-of-type {
