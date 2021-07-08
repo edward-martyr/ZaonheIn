@@ -1,0 +1,13 @@
+.accordianList {
+  font-size: 80%;
+}
+
+.accordianTitle {
+  font-variation-settings: "wght" 500;
+  font-size: 90%;
+}
+
+/* .accordianButton {
+  transform: scale(0.8);
+  transform-origin: 0 0;
+} */

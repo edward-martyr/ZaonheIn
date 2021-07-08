@@ -1,6 +1,6 @@
 // 根据搜索内容输出字及所有解释
 import "./ZyEntry.css";
-import { IonItem, IonLabel, IonAvatar, IonList } from "@ionic/react";
+import { IonItem, IonLabel, IonAvatar, IonList, IonRadio, IonRadioGroup, IonListHeader } from "@ionic/react";
 
 import { zaonhe_tsonpha, wugniu_zaonhe } from "./SearchFunctions";
 

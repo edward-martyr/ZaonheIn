@@ -17,12 +17,7 @@
 }
 
 .title {
-  font-variation-settings: "wght" 300;
-  letter-spacing: 0.1em;
-  display: inline-block;
-  transform: scale(1.1, 1);
-  transform-origin: 0 0;
-  text-align: left;
+  font-variation-settings: "wght" 420;
 }
 
 .searchbar-input {

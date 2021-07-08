@@ -6,7 +6,9 @@ import {
   IonToolbar,
   IonSearchbar,
 } from "@ionic/react";
+import { Keyboard } from "@capacitor/keyboard";
 import ZyEntry from "../components/ZyEntry";
+import { SeusohFaonseh } from "../components/SeusohFaonseh";
 import "./Page.css";
 
 import { useState } from "react";
@@ -23,19 +25,25 @@ const Home: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        {/* <IonToolbar>
+        <IonToolbar>
           <IonTitle className="title">上海音</IonTitle>
-        </IonToolbar> */}
+        </IonToolbar>
         <IonToolbar className="searchbar-toolbar">
           <IonSearchbar
             className="searchbar-input"
             value={searchText}
-            onIonChange={(e) => setSearchText(e.detail.value!)}
+            onKeyUp={(e: any) => {
+              if (e.key === "Enter") {
+                setSearchText(e.target.value!);
+                // Keyboard.hide(); // not implemented on Web
+              }
+            }}
             showCancelButton="never"
-            placeholder="今朝要搜眼啥字呢？"
+            placeholder="今朝想搜眼啥字呢？"
             animated
           ></IonSearchbar>
         </IonToolbar>
+        <SeusohFaonseh />
       </IonHeader>
       <IonContent fullscreen class="ion-padding">
         {entries}
