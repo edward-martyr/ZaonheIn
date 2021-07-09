@@ -23,7 +23,9 @@ import { useState } from "react";
 import "../components/Accordian.css";
 import { chevronDownSharp, chevronUpSharp } from "ionicons/icons";
 
-import {phinins2zys} from "../scripts/process_wugniu_zaonhe"
+import { phinins2zys } from "../scripts/process_wugniu_zaonhe";
+
+const Yitizi = require("yitizi");
 
 const Home: React.FC = () => {
   const [searchText, setSearchText] = useState("");
@@ -38,11 +40,36 @@ const Home: React.FC = () => {
 
   const [seusohBy, setSeusohBy] = useState("byZy");
 
+  var yithiOn = true;
+
   var entries;
 
   if (searchText) {
-    if (seusohBy === "byZy") entries = ZyEntry(searchText);
-    else entries = ZyEntry(phinins2zys(searchText));
+    if (seusohBy === "byZy") {
+      if (yithiOn) {
+        let searchTextVar = searchText.split("");
+        let searchTextYithi = searchTextVar;
+        searchTextVar.forEach(function (part, index, theArray) {
+          searchTextYithi = searchTextYithi.concat(Yitizi.get(theArray[index]));
+        });
+        let newSearchText = searchTextYithi.join("");
+        entries = ZyEntry(newSearchText);
+      } else {
+        entries = ZyEntry(searchText);
+      }
+    } else {
+      if (yithiOn) {
+        let searchTextVar = phinins2zys(searchText).split("");
+        let searchTextYithi = searchTextVar;
+        searchTextVar.forEach(function (part, index, theArray) {
+          searchTextYithi = searchTextYithi.concat(Yitizi.get(theArray[index]));
+        });
+        let newSearchText = searchTextYithi.join("");
+        entries = ZyEntry(newSearchText);
+      } else {
+        entries = ZyEntry(phinins2zys(searchText));
+      }
+    }
   } else {
     entries = "";
   }
@@ -50,14 +77,14 @@ const Home: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
+        {/* <IonToolbar>
           <IonTitle className="title">上海音</IonTitle>
-        </IonToolbar>
+        </IonToolbar> */}
         <IonToolbar className="searchbar-toolbar">
           <IonSearchbar
             className="searchbar-input"
             value={searchText}
-            onIonChange={e => setSearchText(e.detail.value!)}
+            onIonChange={(e) => setSearchText(e.detail.value!)}
             onKeyUp={(e: any) => {
               if (e.key === "Enter") {
                 setSearchText(e.target.value!);
@@ -99,7 +126,12 @@ const Home: React.FC = () => {
                           setSeusohBy("byPhinin");
                         }}
                       >
-                        <IonLabel>吳拼<span className="tsyseh">（用空格分隔，區分聲調）</span></IonLabel>
+                        <IonLabel>
+                          吳拼
+                          <span className="tsyseh">
+                            （用空格分隔，區分聲調）
+                          </span>
+                        </IonLabel>
                         <IonRadio value="byPhinin" />
                       </IonItem>,
                     ]);

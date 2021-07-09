@@ -1,6 +1,14 @@
 // 根据搜索内容输出字及所有解释
 import "./ZyEntry.css";
-import { IonItem, IonLabel, IonAvatar, IonList, IonRadio, IonRadioGroup, IonListHeader } from "@ionic/react";
+import {
+  IonItem,
+  IonLabel,
+  IonAvatar,
+  IonList,
+  IonRadio,
+  IonRadioGroup,
+  IonListHeader,
+} from "@ionic/react";
 
 import { zaonhe_tsonpha, wugniu_zaonhe } from "./SearchFunctions";
 
@@ -52,14 +60,16 @@ const ZyEntry = (zys: string) => {
       cihku_Key += 1;
     }
 
-    entries.push([
-      <IonItem className="container" key={zy}>
-        <IonAvatar className="zydeu" key={"zydeu_" + zy}>
-          {zy}
-        </IonAvatar>
-        <IonList lines="none">{lenyoe_cihku}</IonList>
-      </IonItem>,
-    ]);
+    if (lenyoe_cihku.length > 0) {
+      entries.push([
+        <IonItem className="container" key={zy}>
+          <IonAvatar className="zydeu" key={"zydeu_" + zy}>
+            {zy}
+          </IonAvatar>
+          <IonList lines="none">{lenyoe_cihku}</IonList>
+        </IonItem>,
+      ]);
+    }
   }
   return <IonList>{entries}</IonList>;
 };

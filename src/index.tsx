@@ -7,8 +7,8 @@ import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 
-StatusBar.setBackgroundColor({ color: "#fffdfb" }); // set to background color. change needed if dark theme implemented.
-StatusBar.setOverlaysWebView({ overlay: false });
+// StatusBar.setBackgroundColor({ color: "#fffdfb" }); // set to background color. change needed if dark theme implemented.
+// StatusBar.setOverlaysWebView({ overlay: false }); // not implemented on Web
 
 SplashScreen.hide();
 
