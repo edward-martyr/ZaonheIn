@@ -65,4 +65,17 @@ function phinin2IPA(phinin) {
   }
 }
 
-export { wugniu_zaonhe_getPhinin, phinins2zys, phinin2IPA };
+function phinin2PlayAudio(phinin) {
+  var audio = new Audio('assets/audios/'+phinin+'.mp3');
+  var playPromise = audio.play();
+  if (playPromise !== undefined) {
+    playPromise.then(function() {
+      // Automatic playback started!
+    }).catch(function(error) {
+      // Automatic playback failed.
+      // Show a UI element to let the user manually start playback.
+    });
+  }
+}
+
+export { wugniu_zaonhe_getPhinin, phinins2zys, phinin2IPA, phinin2PlayAudio };

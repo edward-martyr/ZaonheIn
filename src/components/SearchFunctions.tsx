@@ -1,10 +1,14 @@
 // 组织搜索结果
 import { query字頭, 音韻地位 } from "qieyun";
 import { zaonhe } from "../scripts/zaonhe_built.js";
-import { wugniu_zaonhe_getPhinin, phinin2IPA } from "../scripts/process_wugniu_zaonhe.js";
+import {
+  wugniu_zaonhe_getPhinin,
+  phinin2IPA,
+  phinin2PlayAudio,
+} from "../scripts/process_wugniu_zaonhe.js";
 import "./ZyEntry.css";
 
-const AFHConvert = require('ascii-fullwidth-halfwidth-convert');
+const AFHConvert = require("ascii-fullwidth-halfwidth-convert");
 const converter = new AFHConvert();
 
 function zaonhe_tsonpha(zy: string) {
@@ -61,7 +65,8 @@ function zaonhe_tsonpha(zy: string) {
     result.push([
       <span key={zy + zydeu.音韻地位.描述}>{dohin}</span>,
       <span className="kaseh" key={zy + zydeu.音韻地位.描述 + "kaseh"}>
-        {converter.toFullWidth(zydeu.音韻地位.描述)}・{zydeu.音韻地位.反切(zy)}切・
+        {converter.toFullWidth(zydeu.音韻地位.描述)}・{zydeu.音韻地位.反切(zy)}
+        切・
         {zydeu.解釋}
       </span>,
     ]);
@@ -87,11 +92,14 @@ function wugniu_zaonhe(zy: string) {
       );
     }
     result_zydeu.push(
-      <span key={zy + phinin} className="wugniuEntry">
+      <span
+        key={zy + phinin}
+        className="wugniuEntry"
+        onClick={(e) => phinin2PlayAudio(phinin)}
+      >
         {phinin}
         <sub>{venbahType}</sub>
-        {yithiShiezy}
-        　{phinin2IPA(phinin)}
+        {yithiShiezy}　{phinin2IPA(phinin)}
         <br />
       </span>
     );
