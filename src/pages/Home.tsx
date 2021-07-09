@@ -73,9 +73,10 @@ const Home: React.FC = () => {
   }
 
   const sieghaonWhenShown = [
-    <IonItem key="seusohBy" lines="inset" class="selectItem">
-      <IonLabel>搜索方式</IonLabel>
+    <IonItem key="seusohBy" lines="inset" class="selectItem ripple">
+      <IonLabel class="ripple">搜索方式</IonLabel>
       <IonSelect
+        class="ripple"
         interface="popover"
         value={seusohBy}
         onIonChange={(e) => setSeusohBy(e.detail.value)}
@@ -85,9 +86,10 @@ const Home: React.FC = () => {
       </IonSelect>
     </IonItem>,
     //
-    <IonItem key="異體" lines="none" class="selectItem">
-      <IonLabel>異體</IonLabel>
+    <IonItem key="異體" lines="none" class="selectItem ripple">
+      <IonLabel class="ripple">異體</IonLabel>
       <IonSelect
+        class="ripple"
         interface="popover"
         value={yithiOn}
         onIonChange={(e) => setYithiOn(e.detail.value)}
@@ -124,7 +126,7 @@ const Home: React.FC = () => {
         <IonToolbar class="accordianList">
           <IonList>
             <IonListHeader
-              class="accordianTitle"
+              class="ripple"
               onMouseUp={(e: any) => {
                 if (搜索方式Clicked === 1) {
                   setSeusohSieghaon([<span key=""></span>]);

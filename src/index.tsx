@@ -10,7 +10,7 @@ import reportWebVitals from "./reportWebVitals";
 SplashScreen.hide();
 
 // StatusBar.setBackgroundColor({ color: "#fffdfb" }); // set to background color. change needed if dark theme implemented. not implemented on Web
-// StatusBar.setOverlaysWebView({ overlay: true });
+// StatusBar.setOverlaysWebView({ overlay: true }); // don't use yet
 
 ReactDOM.render(
   <React.StrictMode>

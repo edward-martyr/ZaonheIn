@@ -7,9 +7,20 @@
   /* font-size: 90%; */
 }
 
-.accordianTitle:active {
+/* .accordianTitle:active {
   background: var(--ion-color-light-tint);
   outline: none;
+} */
+
+.ripple {
+  background: var(--ion-background-color);
+  background-position: center;
+  transition: background 0.8s;
+}
+.ripple:active {
+  background-color: var(--ion-color-light-tint);
+  background-size: 100%;
+  transition: background 0s;
 }
 
 .selectItem:active {
