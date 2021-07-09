@@ -57,6 +57,7 @@ const Home: React.FC = () => {
           <IonSearchbar
             className="searchbar-input"
             value={searchText}
+            onIonChange={e => setSearchText(e.detail.value!)}
             onKeyUp={(e: any) => {
               if (e.key === "Enter") {
                 setSearchText(e.target.value!);
