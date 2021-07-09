@@ -9,8 +9,13 @@
   font-language-override: "KOR";
 }
 
+@font-face {
+  font-family: "I.Ming";
+  src: url("../fonts/I.Ming-Regular-subset.ttf");
+}
+
 * {
-  font-family: "Source Sans Variable", "Source Han Sans Variable";
+  font-family: "Source Sans Variable", "Source Han Sans Variable", "I.Ming";
   font-feature-settings: "palt", "trad";
   font-size: 100.5%;
   /* user-select: auto; */
