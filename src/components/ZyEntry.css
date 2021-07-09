@@ -53,6 +53,10 @@
   overflow: visible;
 }
 
+.vucihku{
+  font-variation-settings: "wght" 350;
+}
+
 ion-list ion-item:last-of-type {
   --inner-border-width: 0px;
 }

@@ -69,7 +69,7 @@ const ZyEntry = (zys: string) => {
     }
     if (entries.length === 0) {
       entries.push([
-        <IonItem key={zy}>
+        <IonItem key={zy} class="vucihku">
           無結果
         </IonItem>,
       ])
