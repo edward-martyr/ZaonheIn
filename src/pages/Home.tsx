@@ -13,6 +13,8 @@ import {
   IonSelect,
   IonSelectOption,
   IonImg,
+  IonFab,
+  IonFabButton,
 } from "@ionic/react";
 import { Keyboard } from "@capacitor/keyboard";
 import ZyEntry from "../components/ZyEntry";
@@ -21,7 +23,7 @@ import "./Page.css";
 import { useState } from "react";
 
 import "../components/Accordian.css";
-import { chevronDownSharp, chevronUpSharp } from "ionicons/icons";
+import { chevronDownSharp, chevronUpSharp, helpOutline } from "ionicons/icons";
 
 import { phinins2zys } from "../scripts/process_wugniu_zaonhe.js";
 
@@ -148,6 +150,11 @@ const Home: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen class="ion-padding">
         {entries}
+        <IonFab vertical="bottom" horizontal="end" slot="fixed">
+          <IonFabButton href="/about">
+            <IonIcon icon={helpOutline} />
+          </IonFabButton>
+        </IonFab>
       </IonContent>
     </IonPage>
   );

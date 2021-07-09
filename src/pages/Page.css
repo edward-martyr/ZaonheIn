@@ -39,3 +39,37 @@
   font-variation-settings: "wght" 350;
   font-size: 80%;
 }
+
+ion-fab-button {
+  width: 2.25em;
+  height: 2.25em;
+}
+
+.fab-horizontal-center {
+  margin-left: unset;
+  margin-inline-start: -50px !important;
+}
+
+h1 {
+  letter-spacing: 0.15em;
+  font-variation-settings: "wght" 300;
+  display: inline-block;
+  transform: scale(0.85, 1);
+  transform-origin: 0 0;
+}
+
+p {
+  font-size: 90%;
+}
+
+.bf {
+  font-variation-settings: "wght" 650;
+}
+
+a {
+  color: black;
+}
+
+rt {
+  font-size: 50%;
+}
