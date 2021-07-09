@@ -77,7 +77,7 @@ function zaonhe_tsonpha(zy: string) {
 function wugniu_zaonhe(zy: string) {
   var returned = wugniu_zaonhe_getPhinin(zy);
   var result = [];
-  for (var [phinin, kaseh, yithi, yithiType, venbahType] of returned) {
+  for (let [phinin, kaseh, yithi, yithiType, venbahType] of returned) {
     var result_zydeu = [];
     var yithiShiezy = (
       <span key={zy + phinin + "yithi"} className="yithi"></span>
