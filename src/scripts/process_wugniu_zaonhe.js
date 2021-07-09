@@ -78,7 +78,7 @@ function phinin2PlayAudio(phinin) {
         // const [present, dismiss] = useIonToast();
         Toast.show({
           text: "吳語學堂嘸沒提供箇隻錄音",
-          duration: "long",
+          // duration: "long",
         });
       });
   }

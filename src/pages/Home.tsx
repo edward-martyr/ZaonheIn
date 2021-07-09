@@ -111,7 +111,7 @@ const Home: React.FC = () => {
             onIonChange={(e) => setSearchText(e.detail.value!)}
             onKeyUp={(e: any) => {
               if (e.key === "Enter") {
-                setSearchText(e.target.value!);
+                // setSearchText(e.target.value!);
                 // Keyboard.hide(); // not implemented on Web
               }
             }}
