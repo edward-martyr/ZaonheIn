@@ -1,6 +1,7 @@
 import wugniu_zaonhe_data from "../data/wugniu/wugniu_zaonhe_data";
 import IPA_svg_data from "../data/wugniu/IPA.svg";
 import "../data/wugniu/IPA.css";
+import { Toast } from "@capacitor/toast";
 
 function wugniu_zaonhe_getPhinin(zy) {
   var tshubu = [];
@@ -66,15 +67,20 @@ function phinin2IPA(phinin) {
 }
 
 function phinin2PlayAudio(phinin) {
-  var audio = new Audio('assets/audios/'+phinin+'.mp3');
+  var audio = new Audio("assets/audios/" + phinin + ".mp3");
   var playPromise = audio.play();
   if (playPromise !== undefined) {
-    playPromise.then(function() {
-      // Automatic playback started!
-    }).catch(function(error) {
-      // Automatic playback failed.
-      // Show a UI element to let the user manually start playback.
-    });
+    playPromise
+      .then(function () {
+        // Pufaon
+      })
+      .catch(function (error) {
+        // const [present, dismiss] = useIonToast();
+        Toast.show({
+          text: "吳語學堂嘸沒提供箇隻錄音",
+          duration: "long",
+        });
+      });
   }
 }
 
