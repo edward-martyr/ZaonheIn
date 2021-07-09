@@ -30,9 +30,7 @@ const Yitizi = require("yitizi");
 const Home: React.FC = () => {
   const [searchText, setSearchText] = useState("");
 
-  const [seusohFaonsehRadios, setseusohFaonsehRadios] = useState([
-    <span key=""></span>,
-  ]);
+  const [seusohSieghaon, setSeusohSieghaon] = useState([<span key=""></span>]);
 
   const [搜索方式Clicked, set搜索方式Clicked] = useState(0);
 
@@ -40,13 +38,13 @@ const Home: React.FC = () => {
 
   const [seusohBy, setSeusohBy] = useState("byZy");
 
-  var yithiOn = true;
+  const [yithiOn, setYithiOn] = useState("弗轉換");
 
   var entries;
 
   if (searchText) {
     if (seusohBy === "byZy") {
-      if (yithiOn) {
+      if (yithiOn === "返回所有異體字") {
         let searchTextVar = searchText.split("");
         let searchTextYithi = searchTextVar;
         searchTextVar.forEach(function (part, index, theArray) {
@@ -54,11 +52,11 @@ const Home: React.FC = () => {
         });
         let newSearchText = searchTextYithi.join("");
         entries = ZyEntry(newSearchText);
-      } else {
+      } else if (yithiOn === "弗轉換") {
         entries = ZyEntry(searchText);
       }
     } else {
-      if (yithiOn) {
+      if (yithiOn === "返回所有異體字") {
         let searchTextVar = phinins2zys(searchText).split("");
         let searchTextYithi = searchTextVar;
         searchTextVar.forEach(function (part, index, theArray) {
@@ -66,7 +64,7 @@ const Home: React.FC = () => {
         });
         let newSearchText = searchTextYithi.join("");
         entries = ZyEntry(newSearchText);
-      } else {
+      } else if (yithiOn === "弗轉換") {
         entries = ZyEntry(phinins2zys(searchText));
       }
     }
@@ -99,18 +97,18 @@ const Home: React.FC = () => {
 
         <IonToolbar class="accordianList">
           <IonList>
-            <IonRadioGroup value={seusohBy}>
-              <IonListHeader
-                class="accordianTitle"
-                onMouseUp={(e: any) => {
-                  if (搜索方式Clicked === 1) {
-                    setseusohFaonsehRadios([<span key=""></span>]);
-                    set搜索方式Clicked(0);
-                    setChevron(chevronDownSharp);
-                  } else {
-                    setseusohFaonsehRadios([
+            <IonListHeader
+              class="accordianTitle"
+              onMouseUp={(e: any) => {
+                if (搜索方式Clicked === 1) {
+                  setSeusohSieghaon([<span key=""></span>]);
+                  set搜索方式Clicked(0);
+                  setChevron(chevronDownSharp);
+                } else {
+                  setSeusohSieghaon([
+                    <IonRadioGroup value={seusohBy} key="seusohBy">
+                      <IonListHeader class="accordianSubTitle">搜索方式</IonListHeader>
                       <IonItem
-                        key="byZy"
                         hidden={false}
                         onMouseUp={(e: any) => {
                           setSeusohBy("byZy");
@@ -118,9 +116,8 @@ const Home: React.FC = () => {
                       >
                         <IonLabel>漢字</IonLabel>
                         <IonRadio value="byZy" />
-                      </IonItem>,
+                      </IonItem>
                       <IonItem
-                        key="byPhinin"
                         hidden={false}
                         onMouseUp={(e: any) => {
                           setSeusohBy("byPhinin");
@@ -133,18 +130,40 @@ const Home: React.FC = () => {
                           </span>
                         </IonLabel>
                         <IonRadio value="byPhinin" />
-                      </IonItem>,
-                    ]);
-                    set搜索方式Clicked(1);
-                    setChevron(chevronUpSharp);
-                  }
-                }}
-              >
-                搜索方式　
-                <IonIcon icon={chevron} />
-              </IonListHeader>
-              {seusohFaonsehRadios}
-            </IonRadioGroup>
+                      </IonItem>
+                    </IonRadioGroup>,
+                    //
+                    <IonRadioGroup value={yithiOn} key="弗轉換">
+                      <IonListHeader class="accordianSubTitle">異體</IonListHeader>
+                      <IonItem
+                        hidden={false}
+                        onMouseUp={(e: any) => {
+                          setYithiOn("弗轉換");
+                        }}
+                      >
+                        <IonLabel>弗轉換</IonLabel>
+                        <IonRadio value="弗轉換" />
+                      </IonItem>
+                      <IonItem
+                        hidden={false}
+                        onMouseUp={(e: any) => {
+                          setYithiOn("返回所有異體字");
+                        }}
+                      >
+                        <IonLabel>返回所有異體字</IonLabel>
+                        <IonRadio value="返回所有異體字" />
+                      </IonItem>
+                    </IonRadioGroup>,
+                  ]);
+                  set搜索方式Clicked(1);
+                  setChevron(chevronUpSharp);
+                }
+              }}
+            >
+              選項　
+              <IonIcon icon={chevron} />
+            </IonListHeader>
+            {seusohSieghaon}
           </IonList>
         </IonToolbar>
         {/*  */}
