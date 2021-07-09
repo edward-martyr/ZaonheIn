@@ -12,6 +12,8 @@ import {
   IonListHeader,
   IonList,
   IonIcon,
+  IonSelect,
+  IonSelectOption,
 } from "@ionic/react";
 import { Keyboard } from "@capacitor/keyboard";
 import ZyEntry from "../components/ZyEntry";
@@ -73,52 +75,29 @@ const Home: React.FC = () => {
   }
 
   const sieghaonWhenShown = [
-    <IonRadioGroup value={seusohBy} key="seusohBy">
-      <IonListHeader class="accordianSubTitle">搜索方式</IonListHeader>
-      <IonItem
-        hidden={false}
-        onMouseUp={(e: any) => {
-          setSeusohBy("byZy");
-        }}
+    <IonItem key="seusohBy">
+      <IonLabel>搜索方式</IonLabel>
+      <IonSelect
+        interface="popover"
+        value={seusohBy}
+        onIonChange={(e) => setSeusohBy(e.detail.value)}
       >
-        <IonLabel>漢字</IonLabel>
-        <IonRadio value="byZy" />
-      </IonItem>
-      <IonItem
-        hidden={false}
-        onMouseUp={(e: any) => {
-          setSeusohBy("byPhinin");
-        }}
-      >
-        <IonLabel>
-          吳拼
-          <span className="tsyseh">（用空格分隔，區分聲調）</span>
-        </IonLabel>
-        <IonRadio value="byPhinin" />
-      </IonItem>
-    </IonRadioGroup>,
+        <IonSelectOption value="byZy">漢字</IonSelectOption>
+        <IonSelectOption value="byPhinin">學堂式吳拼</IonSelectOption>
+      </IonSelect>
+    </IonItem>,
     //
-    <IonRadioGroup value={yithiOn} key="弗轉換">
-      <IonListHeader class="accordianSubTitle">異體</IonListHeader>
-      <IonItem
-        hidden={false}
-        onMouseUp={(e: any) => {
-          setYithiOn("弗轉換");
-        }}
+    <IonItem key="異體">
+      <IonLabel>異體</IonLabel>
+      <IonSelect
+        interface="popover"
+        value={yithiOn}
+        onIonChange={(e) => setYithiOn(e.detail.value)}
       >
-        <IonLabel>弗轉換</IonLabel>
-        <IonRadio value="弗轉換" />
-      </IonItem>
-      <IonItem
-        hidden={false}
-        onMouseUp={(e: any) => {
-          setYithiOn("返回所有異體字");
-        }}
-      >
-        <IonLabel>返回所有異體字</IonLabel>
-        <IonRadio value="返回所有異體字" />
-      </IonItem>
-    </IonRadioGroup>,
+        <IonSelectOption value="弗轉換">弗轉換</IonSelectOption>
+        <IonSelectOption value="返回所有異體字">返回所有異體字</IonSelectOption>
+      </IonSelect>
+    </IonItem>,
   ];
 
   return (
