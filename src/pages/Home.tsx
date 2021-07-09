@@ -72,6 +72,55 @@ const Home: React.FC = () => {
     entries = "";
   }
 
+  const sieghaonWhenShown = [
+    <IonRadioGroup value={seusohBy} key="seusohBy">
+      <IonListHeader class="accordianSubTitle">搜索方式</IonListHeader>
+      <IonItem
+        hidden={false}
+        onMouseUp={(e: any) => {
+          setSeusohBy("byZy");
+        }}
+      >
+        <IonLabel>漢字</IonLabel>
+        <IonRadio value="byZy" />
+      </IonItem>
+      <IonItem
+        hidden={false}
+        onMouseUp={(e: any) => {
+          setSeusohBy("byPhinin");
+        }}
+      >
+        <IonLabel>
+          吳拼
+          <span className="tsyseh">（用空格分隔，區分聲調）</span>
+        </IonLabel>
+        <IonRadio value="byPhinin" />
+      </IonItem>
+    </IonRadioGroup>,
+    //
+    <IonRadioGroup value={yithiOn} key="弗轉換">
+      <IonListHeader class="accordianSubTitle">異體</IonListHeader>
+      <IonItem
+        hidden={false}
+        onMouseUp={(e: any) => {
+          setYithiOn("弗轉換");
+        }}
+      >
+        <IonLabel>弗轉換</IonLabel>
+        <IonRadio value="弗轉換" />
+      </IonItem>
+      <IonItem
+        hidden={false}
+        onMouseUp={(e: any) => {
+          setYithiOn("返回所有異體字");
+        }}
+      >
+        <IonLabel>返回所有異體字</IonLabel>
+        <IonRadio value="返回所有異體字" />
+      </IonItem>
+    </IonRadioGroup>,
+  ];
+
   return (
     <IonPage>
       <IonHeader>
@@ -105,56 +154,7 @@ const Home: React.FC = () => {
                   set搜索方式Clicked(0);
                   setChevron(chevronDownSharp);
                 } else {
-                  setSeusohSieghaon([
-                    <IonRadioGroup value={seusohBy} key="seusohBy">
-                      <IonListHeader class="accordianSubTitle">搜索方式</IonListHeader>
-                      <IonItem
-                        hidden={false}
-                        onMouseUp={(e: any) => {
-                          setSeusohBy("byZy");
-                        }}
-                      >
-                        <IonLabel>漢字</IonLabel>
-                        <IonRadio value="byZy" />
-                      </IonItem>
-                      <IonItem
-                        hidden={false}
-                        onMouseUp={(e: any) => {
-                          setSeusohBy("byPhinin");
-                        }}
-                      >
-                        <IonLabel>
-                          吳拼
-                          <span className="tsyseh">
-                            （用空格分隔，區分聲調）
-                          </span>
-                        </IonLabel>
-                        <IonRadio value="byPhinin" />
-                      </IonItem>
-                    </IonRadioGroup>,
-                    //
-                    <IonRadioGroup value={yithiOn} key="弗轉換">
-                      <IonListHeader class="accordianSubTitle">異體</IonListHeader>
-                      <IonItem
-                        hidden={false}
-                        onMouseUp={(e: any) => {
-                          setYithiOn("弗轉換");
-                        }}
-                      >
-                        <IonLabel>弗轉換</IonLabel>
-                        <IonRadio value="弗轉換" />
-                      </IonItem>
-                      <IonItem
-                        hidden={false}
-                        onMouseUp={(e: any) => {
-                          setYithiOn("返回所有異體字");
-                        }}
-                      >
-                        <IonLabel>返回所有異體字</IonLabel>
-                        <IonRadio value="返回所有異體字" />
-                      </IonItem>
-                    </IonRadioGroup>,
-                  ]);
+                  setSeusohSieghaon(sieghaonWhenShown);
                   set搜索方式Clicked(1);
                   setChevron(chevronUpSharp);
                 }
