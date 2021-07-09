@@ -7,6 +7,16 @@
   /* font-size: 90%; */
 }
 
+.accordianTitle:active {
+  background: var(--ion-color-light-tint);
+  outline: none;
+}
+
+.selectItem:active {
+  background: var(--ion-color-light-tint);
+  outline: none;
+}
+
 .accordianSubTitle {
   font-variation-settings: "wght" 600;
 }

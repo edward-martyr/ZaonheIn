@@ -5,9 +5,6 @@ import {
   IonLabel,
   IonAvatar,
   IonList,
-  IonRadio,
-  IonRadioGroup,
-  IonListHeader,
 } from "@ionic/react";
 
 import { zaonhe_tsonpha, wugniu_zaonhe } from "./SearchFunctions";

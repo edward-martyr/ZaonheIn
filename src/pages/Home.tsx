@@ -75,7 +75,7 @@ const Home: React.FC = () => {
   }
 
   const sieghaonWhenShown = [
-    <IonItem key="seusohBy">
+    <IonItem key="seusohBy" lines="inset" class="selectItem">
       <IonLabel>搜索方式</IonLabel>
       <IonSelect
         interface="popover"
@@ -87,7 +87,7 @@ const Home: React.FC = () => {
       </IonSelect>
     </IonItem>,
     //
-    <IonItem key="異體">
+    <IonItem key="異體" lines="none" class="selectItem">
       <IonLabel>異體</IonLabel>
       <IonSelect
         interface="popover"
@@ -145,7 +145,6 @@ const Home: React.FC = () => {
             {seusohSieghaon}
           </IonList>
         </IonToolbar>
-        {/*  */}
       </IonHeader>
       <IonContent fullscreen class="ion-padding">
         {entries}
