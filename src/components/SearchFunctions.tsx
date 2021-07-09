@@ -1,7 +1,7 @@
 // 组织搜索结果
 import { query字頭, 音韻地位 } from "qieyun";
 import { zaonhe } from "../scripts/zaonhe_built.js";
-import { wugniu_zaonhe_getPhinin } from "../scripts/process_wugniu_zaonhe";
+import { wugniu_zaonhe_getPhinin, phinin2IPA } from "../scripts/process_wugniu_zaonhe.js";
 import "./ZyEntry.css";
 
 const AFHConvert = require('ascii-fullwidth-halfwidth-convert');
@@ -87,10 +87,11 @@ function wugniu_zaonhe(zy: string) {
       );
     }
     result_zydeu.push(
-      <span key={zy + phinin}>
+      <span key={zy + phinin} className="wugniuEntry">
         {phinin}
         <sub>{venbahType}</sub>
         {yithiShiezy}
+        　{phinin2IPA(phinin)}
         <br />
       </span>
     );

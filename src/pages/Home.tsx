@@ -23,7 +23,7 @@ import { useState } from "react";
 import "../components/Accordian.css";
 import { chevronDownSharp, chevronUpSharp } from "ionicons/icons";
 
-import { phinins2zys } from "../scripts/process_wugniu_zaonhe";
+import { phinins2zys } from "../scripts/process_wugniu_zaonhe.js";
 
 const Yitizi = require("yitizi");
 
@@ -146,7 +146,6 @@ const Home: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen class="ion-padding">
         {entries}
-        <img alt="a" src="../src/data/wugniu/IPAs/wu6.svg" width="xxx" height="xxx" />
       </IonContent>
     </IonPage>
   );

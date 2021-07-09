@@ -68,7 +68,11 @@ const ZyEntry = (zys: string) => {
       ]);
     }
     if (entries.length === 0) {
-      // console.log(0)
+      entries.push([
+        <IonItem key={zy}>
+          無結果
+        </IonItem>,
+      ])
     }
   }
   return <IonList>{entries}</IonList>;

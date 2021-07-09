@@ -49,6 +49,10 @@
   font-variation-settings: "wght" 350;
 }
 
+.wugniuEntry{
+  overflow: visible;
+}
+
 ion-list ion-item:last-of-type {
   --inner-border-width: 0px;
 }

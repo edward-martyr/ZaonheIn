@@ -1,6 +1,8 @@
 import wugniu_zaonhe_data from "../data/wugniu/wugniu_zaonhe_data";
+import IPA_svg_data from "../data/wugniu/IPA.svg";
+import "../data/wugniu/IPA.css";
 
-function wugniu_zaonhe_getPhinin(zy: string) {
+function wugniu_zaonhe_getPhinin(zy) {
   var tshubu = [];
   for (var [vaethi, ciethi, phinin, kaseh] of wugniu_zaonhe_data) {
     if (zy === vaethi) {
@@ -25,7 +27,7 @@ function wugniu_zaonhe_getPhinin(zy: string) {
   return [...new Set(Array.from(tshubu))];
 }
 
-function phinins2zys(rawPhinins: string) {
+function phinins2zys(rawPhinins) {
   var phinins = rawPhinins.split(" ");
   var zys = [];
   for (var phininInput of phinins) {
@@ -39,4 +41,28 @@ function phinins2zys(rawPhinins: string) {
   return [...new Set(Array.from(zys))].join("");
 }
 
-export { wugniu_zaonhe_getPhinin, phinins2zys };
+function phinin2IPA(phinin) {
+  try {
+    return (
+      <svg
+        className="wugniuIPA"
+        height="1em"
+        width="3.5em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d={IPA_svg_data[phinin]}></path>
+      </svg>
+    );
+  } catch (error) {
+    return (
+      <svg
+        className="wugniuIPA"
+        height="1em"
+        width="3.5em"
+        xmlns="http://www.w3.org/2000/svg"
+      ></svg>
+    );
+  }
+}
+
+export { wugniu_zaonhe_getPhinin, phinins2zys, phinin2IPA };
