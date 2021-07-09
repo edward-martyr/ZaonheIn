@@ -67,6 +67,9 @@ const ZyEntry = (zys: string) => {
         </IonItem>,
       ]);
     }
+    if (entries.length === 0) {
+      // console.log(0)
+    }
   }
   return <IonList>{entries}</IonList>;
 };

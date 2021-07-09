@@ -5,8 +5,6 @@ import {
   IonTitle,
   IonToolbar,
   IonSearchbar,
-  IonRadioGroup,
-  IonRadio,
   IonItem,
   IonLabel,
   IonListHeader,
@@ -14,10 +12,10 @@ import {
   IonIcon,
   IonSelect,
   IonSelectOption,
+  IonImg,
 } from "@ionic/react";
 import { Keyboard } from "@capacitor/keyboard";
 import ZyEntry from "../components/ZyEntry";
-// import { SeusohFaonseh } from "../components/SeusohFaonseh";
 import "./Page.css";
 
 import { useState } from "react";
@@ -71,7 +69,7 @@ const Home: React.FC = () => {
       }
     }
   } else {
-    entries = "";
+    // entries = <IonImg src={"assets/bg.png"} />;
   }
 
   const sieghaonWhenShown = [
@@ -148,6 +146,7 @@ const Home: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen class="ion-padding">
         {entries}
+        <img alt="a" src="../src/data/wugniu/IPAs/wu6.svg" width="xxx" height="xxx" />
       </IonContent>
     </IonPage>
   );

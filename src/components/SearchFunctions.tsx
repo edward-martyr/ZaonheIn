@@ -4,6 +4,9 @@ import { zaonhe } from "../scripts/zaonhe_built.js";
 import { wugniu_zaonhe_getPhinin } from "../scripts/process_wugniu_zaonhe";
 import "./ZyEntry.css";
 
+const AFHConvert = require('ascii-fullwidth-halfwidth-convert');
+const converter = new AFHConvert();
+
 function zaonhe_tsonpha(zy: string) {
   var result = [];
   var query = query字頭(zy);
@@ -58,7 +61,7 @@ function zaonhe_tsonpha(zy: string) {
     result.push([
       <span key={zy + zydeu.音韻地位.描述}>{dohin}</span>,
       <span className="kaseh" key={zy + zydeu.音韻地位.描述 + "kaseh"}>
-        {zydeu.音韻地位.描述}・{zydeu.音韻地位.反切(zy)}切・
+        {converter.toFullWidth(zydeu.音韻地位.描述)}・{zydeu.音韻地位.反切(zy)}切・
         {zydeu.解釋}
       </span>,
     ]);
