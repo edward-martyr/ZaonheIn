@@ -49,14 +49,22 @@
   font-variation-settings: "wght" 350;
 }
 
-.wugniuEntry{
+.wugniuEntry {
   overflow: visible;
 }
 
-.vucihku{
+.vucihku {
   font-variation-settings: "wght" 350;
 }
 
 ion-list ion-item:last-of-type {
   --inner-border-width: 0px;
+}
+
+.sc-ion-label-ios-h {
+  font-size: 200%;
+}
+
+.sc-ion-label-ios-s {
+  font-size: 200%;
 }

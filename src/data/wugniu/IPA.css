@@ -1,4 +1,6 @@
 .wugniuIPA {
-  transform: scale(1.13, 1.13) translate(0,0.3ex);
+  position: absolute;
+  transform: scale(1.15, 1.2) translate(0,0.4ex);
   transform-origin: 0 0;
+  overflow: visible;
 }

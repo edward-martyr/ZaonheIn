@@ -47,8 +47,6 @@ function phinin2IPA(phinin) {
     return (
       <svg
         className="wugniuIPA"
-        height="1em"
-        width="3.5em"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path d={IPA_svg_data[phinin]}></path>
@@ -58,8 +56,6 @@ function phinin2IPA(phinin) {
     return (
       <svg
         className="wugniuIPA"
-        height="1em"
-        width="3.5em"
         xmlns="http://www.w3.org/2000/svg"
       ></svg>
     );

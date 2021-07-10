@@ -61,11 +61,11 @@ const About: React.FC = () => {
         <p>
           <span className="bf">學堂</span>部分有一些音頻播放弗出？⸺是個。因爲吳語學堂並嘸沒提供字典裏向每一個音個音頻文件。
         </p>
-        <IonFab vertical="bottom" horizontal="end" slot="fixed">
+        {/* <IonFab vertical="bottom" horizontal="end" slot="fixed">
           <IonFabButton href="/home" routerDirection="root" translucent={true} size="small">
             <IonIcon icon={homeOutline} />
           </IonFabButton>
-        </IonFab>
+        </IonFab> */}
       </IonContent>
     </IonPage>
   );
