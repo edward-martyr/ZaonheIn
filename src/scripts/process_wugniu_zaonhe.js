@@ -42,24 +42,71 @@ function phinins2zys(rawPhinins) {
   return [...new Set(Array.from(zys))].join("");
 }
 
-function phinin2IPA(phinin) {
-  try {
-    return (
-      <svg
-        className="wugniuIPA"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d={IPA_svg_data[phinin]}></path>
-      </svg>
-    );
-  } catch (error) {
-    return (
-      <svg
-        className="wugniuIPA"
-        xmlns="http://www.w3.org/2000/svg"
-      ></svg>
-    );
+// function phinin2IPA(phinin) {
+//   try {
+//     return (
+//       <svg
+//         className="wugniuIPA"
+//         xmlns="http://www.w3.org/2000/svg"
+//       >
+//         <path d={IPA_svg_data[phinin]}></path>
+//       </svg>
+//     );
+//   } catch (error) {
+//     return (
+//       <svg
+//         className="wugniuIPA"
+//         xmlns="http://www.w3.org/2000/svg"
+//       ></svg>
+//     );
+//   }
+// }
+
+function wugniu2IPA(wugniu) {
+  var pairs = [
+    [/er/, "ɦəl"],
+    [/^n$/, "n̩"],
+    [/^m$/, "m̩"],
+    [/^ng$/, "ŋ̩"],
+    [/y$/, "ɿ"],
+    [/sh/, "ɕ"],
+    [/([ptskc])h/, "$1ʰ"],
+    [/gh/, "ɦ"],
+    [/gn/, "ȵi"],
+    [/ng/, "ŋ"],
+    [/zh/, "ʑ"],
+    [/c/, "tɕ"],
+    [/j/, "dʑ"],
+    [/y/, "ɦi"],
+    [/w/, "ɦu"],
+    [/aon/, "ɑ̃"],
+    [/ioe/, "yø"],
+    [/iuq/, "yɪʔ"],
+    [/iu/, "y"],
+    [/au/, "ɔ"],
+    [/eu/, "ɤ"],
+    [/oe/, "ø"],
+    [/an/, "ã"],
+    [/en/, "ən"],
+    [/on/, "oŋ"],
+    [/aq/, "ᴀʔ"],
+    [/eq/, "əʔ"],
+    [/iq/, "iɪʔ"],
+    [/q/, "ʔ"],
+    [/a/, "ᴀ"],
+    [/e/, "ᴇ"],
+    [/ii/, "i"],
+    [/uu/, "u"],
+    [/1/, "⁵³"],
+    [/5/, "³³⁴"],
+    [/6/, "¹¹²"],
+    [/7/, "⁵⁵"],
+    [/8/, "¹²"],
+  ];
+  for (let [zie, gheu] of pairs) {
+    wugniu = wugniu.replace(zie, gheu);
   }
+  return wugniu;
 }
 
 function phinin2PlayAudio(phinin) {
@@ -80,4 +127,10 @@ function phinin2PlayAudio(phinin) {
   }
 }
 
-export { wugniu_zaonhe_getPhinin, phinins2zys, phinin2IPA, phinin2PlayAudio };
+export {
+  wugniu_zaonhe_getPhinin,
+  phinins2zys,
+  // phinin2IPA,
+  phinin2PlayAudio,
+  wugniu2IPA,
+};

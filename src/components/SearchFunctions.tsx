@@ -3,7 +3,7 @@ import { query字頭, 音韻地位 } from "qieyun";
 import { zaonhe } from "../scripts/zaonhe_built.js";
 import {
   wugniu_zaonhe_getPhinin,
-  phinin2IPA,
+  wugniu2IPA,
   phinin2PlayAudio,
 } from "../scripts/process_wugniu_zaonhe.js";
 import "./ZyEntry.css";
@@ -99,7 +99,7 @@ function wugniu_zaonhe(zy: string) {
       >
         {phinin}
         <sub>{venbahType}</sub>
-        {yithiShiezy}　{phinin2IPA(phinin)}
+        {yithiShiezy}　{wugniu2IPA(phinin)}
         <br />
       </span>
     );
