@@ -63,22 +63,23 @@ function phinins2zys(rawPhinins) {
 // }
 
 function wugniu2IPA(wugniu) {
-  var pairs = [
+  let result = wugniu;
+  let pairs = [
     [/er/, "ɦəl"],
-    [/^n$/, "n̩"],
-    [/^m$/, "m̩"],
-    [/^ng$/, "ŋ̩"],
-    [/y$/, "ɿ"],
-    [/sh/, "ɕ"],
+    [/^n(.)$/, "n̩$1"],
+    [/^m(.)$/, "m̩$1"],
+    [/^ng(.)$/, "ŋ̩$1"],
+    [/y(.)$/, "z̩$1"],
+    [/^sh/, "ɕ"],
     [/([ptskc])h/, "$1ʰ"],
-    [/gh/, "ɦ"],
-    [/gn/, "ȵi"],
-    [/ng/, "ŋ"],
-    [/zh/, "ʑ"],
-    [/c/, "tɕ"],
-    [/j/, "dʑ"],
-    [/y/, "ɦi"],
-    [/w/, "ɦu"],
+    [/^gh/, "ɦ"],
+    [/^gn/, "ɲi"],
+    [/^ng/, "ŋ"],
+    [/^zh/, "ʑ"],
+    [/^c/, "tɕ"],
+    [/^j/, "dʑ"],
+    [/^y/, "ɦi"],
+    [/^w/, "ɦu"],
     [/aon/, "ɑ̃"],
     [/ioe/, "yø"],
     [/iuq/, "yɪʔ"],
@@ -89,24 +90,22 @@ function wugniu2IPA(wugniu) {
     [/an/, "ã"],
     [/en/, "ən"],
     [/on/, "oŋ"],
-    [/aq/, "ᴀʔ"],
     [/eq/, "əʔ"],
     [/iq/, "iɪʔ"],
     [/q/, "ʔ"],
-    [/a/, "ᴀ"],
-    [/e/, "ᴇ"],
     [/ii/, "i"],
+    [/iy/, "y"],
     [/uu/, "u"],
-    [/1/, "⁵³"],
-    [/5/, "³³⁴"],
-    [/6/, "¹¹²"],
-    [/7/, "⁵⁵"],
-    [/8/, "¹²"],
+    [/1$/, "⁵³"],
+    [/5$/, "³³⁴"],
+    [/6$/, "¹¹³"],
+    [/7$/, "⁵⁵"],
+    [/8$/, "¹²"],
   ];
   for (let [zie, gheu] of pairs) {
-    wugniu = wugniu.replace(zie, gheu);
+    result = result.replace(zie, gheu);
   }
-  return wugniu;
+  return "/" + result + "/";
 }
 
 function phinin2PlayAudio(phinin) {

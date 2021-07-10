@@ -11,6 +11,14 @@ import "./ZyEntry.css";
 const AFHConvert = require("ascii-fullwidth-halfwidth-convert");
 const converter = new AFHConvert();
 
+function zaonhe_slashes(
+  音韻地位_: any,
+  字頭?: string | undefined,
+  選項?: Object | undefined
+) {
+  return "/" + zaonhe(音韻地位_, 字頭, 選項) + "/";
+}
+
 function zaonhe_tsonpha(zy: string) {
   var result = [];
   var query = query字頭(zy);
@@ -21,7 +29,7 @@ function zaonhe_tsonpha(zy: string) {
       zaonhe(zydeu.音韻地位, zy, { 標調方式: "數字" }) ===
       zaonhe(zydeu.音韻地位, zy, { 標調方式: "數字", 文白讀: "僅白讀" })
     ) {
-      dohin.push(zaonhe(zydeu.音韻地位, zy, { 標調方式: "數字" }));
+      dohin.push(zaonhe_slashes(zydeu.音韻地位, zy, { 標調方式: "數字" }));
     } else {
       if (
         zaonhe(zydeu.音韻地位, zy, {
@@ -32,10 +40,10 @@ function zaonhe_tsonpha(zy: string) {
         dohin.push(
           <span key={zy + zydeu.音韻地位.描述 + "venbahdoh"}>
             <span className="jiansy" key={zy + zydeu.音韻地位.描述 + "vendoh"}>
-              {zaonhe(zydeu.音韻地位, zy, { 標調方式: "數字" })}
+              {zaonhe_slashes(zydeu.音韻地位, zy, { 標調方式: "數字" })}
               <sub>文</sub>&nbsp;&nbsp;
               <span className="zahsy" key={zy + zydeu.音韻地位.描述 + "bahdoh"}>
-                {zaonhe(zydeu.音韻地位, zy, {
+                {zaonhe_slashes(zydeu.音韻地位, zy, {
                   標調方式: "數字",
                   文白讀: "僅白讀",
                 })}
@@ -48,11 +56,11 @@ function zaonhe_tsonpha(zy: string) {
         dohin.push(
           <span key={zy + zydeu.音韻地位.描述 + "venbahdoh"}>
             <span className="zahsy" key={zy + zydeu.音韻地位.描述 + "vendoh"}>
-              {zaonhe(zydeu.音韻地位, zy, { 標調方式: "數字" })}
+              {zaonhe_slashes(zydeu.音韻地位, zy, { 標調方式: "數字" })}
               <sub>文</sub>&nbsp;&nbsp;
             </span>
             <span className="jiansy" key={zy + zydeu.音韻地位.描述 + "bahdoh"}>
-              {zaonhe(zydeu.音韻地位, zy, {
+              {zaonhe_slashes(zydeu.音韻地位, zy, {
                 標調方式: "數字",
                 文白讀: "僅白讀",
               })}
