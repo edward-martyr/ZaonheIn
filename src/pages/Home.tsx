@@ -56,7 +56,7 @@ const Home: React.FC = () => {
   });
 
   const [searchText, setSearchText] = useState("");
-  const [seusohBy, setSeusohBy] = useState("byZy");
+  const [seusohBy, setSeusohBy] = useState("漢字");
   const [yithiOn, setYithiOn] = useState("弗轉換");
   if (searchText === "") {
     (async () => {
@@ -82,7 +82,7 @@ const Home: React.FC = () => {
   var entries;
 
   if (searchText) {
-    if (seusohBy === "byZy") {
+    if (seusohBy === "漢字") {
       if (yithiOn === "返回所有異體字") {
         let searchTextVar = searchText.split("");
         let searchTextYithi = searchTextVar;
@@ -123,8 +123,8 @@ const Home: React.FC = () => {
           storage.set("seusohBy", e.detail.value!);
         }}
       >
-        <IonSelectOption value="byZy">漢字</IonSelectOption>
-        <IonSelectOption value="byPhinin">學堂式吳拼</IonSelectOption>
+        <IonSelectOption value="漢字">漢字</IonSelectOption>
+        <IonSelectOption value="學堂式吳拼">學堂式吳拼</IonSelectOption>
       </IonSelect>
     </IonItem>,
     //
@@ -135,7 +135,7 @@ const Home: React.FC = () => {
         interface="popover"
         value={yithiOn}
         onIonChange={(e) => {
-          setYithiOn(e.detail.value!)
+          setYithiOn(e.detail.value!);
           storage.set("yithiOn", e.detail.value!);
         }}
       >
@@ -188,7 +188,10 @@ const Home: React.FC = () => {
               }}
             >
               選項　
-              <IonIcon icon={chevron} />
+              <IonIcon icon={chevron} />　
+              <span className="tsyseh">
+                {seusohBy}・{yithiOn}
+              </span>
             </IonListHeader>
             {seusohSieghaon}
           </IonList>

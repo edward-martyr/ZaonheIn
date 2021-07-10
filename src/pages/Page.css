@@ -36,8 +36,11 @@
 }
 
 .tsyseh {
-  font-variation-settings: "wght" 350;
-  font-size: 80%;
+  font-variation-settings: "wght" 420;
+  font-size: 90%;
+  display: inline-block;
+  transform: scale(0.85, 1);
+  transform-origin: 0 0;
 }
 
 ion-back-button {
