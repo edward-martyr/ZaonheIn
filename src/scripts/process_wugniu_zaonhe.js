@@ -1,6 +1,4 @@
 import wugniu_zaonhe_data from "../data/wugniu/wugniu_zaonhe_data";
-import IPA_svg_data from "../data/wugniu/IPA.svg";
-import "../data/wugniu/IPA.css";
 import { Toast } from "@capacitor/toast";
 
 function wugniu_zaonhe_getPhinin(zy) {
@@ -31,9 +29,20 @@ function wugniu_zaonhe_getPhinin(zy) {
 function phinins2zys(rawPhinins) {
   var phinins = rawPhinins.split(" ");
   var zys = [];
+  let phininSuzys = []
   for (var phininInput of phinins) {
+    if (! '15678'.includes(phininInput.slice(-1))) {
+      for (let suzy of '15678') {
+        phininSuzys.push(phininInput+suzy)
+      }
+    } else {
+      phininSuzys.push(phininInput)
+    }
+  }
+
+  for (var phininSuzy of phininSuzys) {
     for (var [vaethi, ciethi, phinin, kaseh] of wugniu_zaonhe_data) {
-      if (phininInput === phinin) {
+      if (phininSuzy === phinin) {
         zys.push(vaethi);
         zys.push(ciethi);
       }

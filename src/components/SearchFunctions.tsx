@@ -105,9 +105,9 @@ function wugniu_zaonhe(zy: string) {
         className="wugniuEntry"
         onClick={(e) => phinin2PlayAudio(phinin)}
       >
-        {phinin}
+        {wugniu2IPA(phinin)}　{phinin}
         <sub>{venbahType}</sub>
-        {yithiShiezy}　{wugniu2IPA(phinin)}
+        {yithiShiezy}
         <br />
       </span>
     );
