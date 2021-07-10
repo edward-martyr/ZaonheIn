@@ -20,6 +20,7 @@ import ZyEntry from "../components/ZyEntry";
 import "./Page.css";
 
 import { useState } from "react";
+import { Storage } from "@ionic/storage";
 
 import "../components/Accordian.css";
 import {
@@ -33,20 +34,50 @@ import {
 
 import { phinins2zys } from "../scripts/process_wugniu_zaonhe.js";
 
+import { useIonRouter } from "@ionic/react";
+import { Plugins } from "@capacitor/core";
+const { App } = Plugins;
+
 const Yitizi = require("yitizi");
 
+const storage = new Storage();
+storage.create();
+
+// (async () => {
+//   await storage.clear(); // debug storage
+// })();
+
 const Home: React.FC = () => {
+  const ionRouter = useIonRouter();
+  document.addEventListener("backButton", () => {
+    if (!ionRouter.canGoBack()) {
+      App.exitApp();
+    }
+  });
+
   const [searchText, setSearchText] = useState("");
+  const [seusohBy, setSeusohBy] = useState("byZy");
+  const [yithiOn, setYithiOn] = useState("弗轉換");
+  if (searchText === "") {
+    (async () => {
+      let seusohByProto = await storage.get("seusohBy");
+      if (seusohByProto) setSeusohBy(seusohByProto);
+    })();
+    (async () => {
+      let yithiOnProto = await storage.get("yithiOn");
+      if (yithiOnProto) setYithiOn(yithiOnProto);
+    })();
+    (async () => {
+      let searchTextProto = await storage.get("searchText");
+      if (searchTextProto) setSearchText(searchTextProto);
+    })();
+  }
 
   const [seusohSieghaon, setSeusohSieghaon] = useState([<span key=""></span>]);
 
   const [搜索方式Clicked, set搜索方式Clicked] = useState(0);
 
   const [chevron, setChevron] = useState(chevronDownSharp);
-
-  const [seusohBy, setSeusohBy] = useState("byZy");
-
-  const [yithiOn, setYithiOn] = useState("弗轉換");
 
   var entries;
 
@@ -87,7 +118,10 @@ const Home: React.FC = () => {
         // class="ripple"
         interface="popover"
         value={seusohBy}
-        onIonChange={(e) => setSeusohBy(e.detail.value)}
+        onIonChange={(e) => {
+          setSeusohBy(e.detail.value);
+          storage.set("seusohBy", e.detail.value!);
+        }}
       >
         <IonSelectOption value="byZy">漢字</IonSelectOption>
         <IonSelectOption value="byPhinin">學堂式吳拼</IonSelectOption>
@@ -100,7 +134,10 @@ const Home: React.FC = () => {
         // class="ripple"
         interface="popover"
         value={yithiOn}
-        onIonChange={(e) => setYithiOn(e.detail.value)}
+        onIonChange={(e) => {
+          setYithiOn(e.detail.value!)
+          storage.set("yithiOn", e.detail.value!);
+        }}
       >
         <IonSelectOption value="弗轉換">弗轉換</IonSelectOption>
         <IonSelectOption value="返回所有異體字">返回所有異體字</IonSelectOption>
@@ -118,7 +155,10 @@ const Home: React.FC = () => {
           <IonSearchbar
             className="searchbar-input"
             value={searchText}
-            onIonChange={(e) => setSearchText(e.detail.value!)}
+            onIonChange={(e) => {
+              setSearchText(e.detail.value!);
+              storage.set("searchText", e.detail.value!);
+            }}
             onKeyUp={(e: any) => {
               if (e.key === "Enter") {
                 // setSearchText(e.target.value!);
@@ -161,7 +201,12 @@ const Home: React.FC = () => {
             <IonIcon icon={chevronBackOutline} />
           </IonFabButton>
           <IonFabList side="start">
-            <IonFabButton href="/about" translucent={true} size="small">
+            <IonFabButton
+              href="/about"
+              translucent={true}
+              size="small"
+              routerDirection="forward"
+            >
               <IonIcon icon={helpOutline} />
             </IonFabButton>
             <IonFabButton
