@@ -5,7 +5,7 @@
   "dependencies": {
     "@capacitor/android": "3.1.1",
     "@capacitor/app": "1.0.2",
-    "@capacitor/core": "3.0.2",
+    "@capacitor/core": "^3.1.1",
     "@capacitor/haptics": "1.0.2",
     "@capacitor/keyboard": "^1.0.2",
     "@capacitor/splash-screen": "^1.0.2",
