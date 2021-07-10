@@ -19,7 +19,7 @@
   font-feature-settings: "palt", "trad";
   font-size: 100.5%;
   /* user-select: auto; */
-  --ripple-color: transparent;
+  /* --ripple-color: transparent; */
 }
 
 .title {
