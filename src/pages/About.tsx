@@ -58,7 +58,11 @@ const About: React.FC = () => {
         <h1>ＦＡＱｓ</h1>
         <p>
           <span className="bf">學堂</span>
-          部分個 IPA 方案搭<span className="bf">推導</span>部分個弗一樣，外加有些音節搭實際語音有眼搭弗上？⸺對個。<span className="bf">學堂</span>部分是基本按照吳語學堂個 IPA 方案，僅僅是拿弗標準個字母轉成標準 IPA 字母了，並嘸沒改成功更加表音個方案。
+          部分個 IPA 方案搭<span className="bf">推導</span>
+          部分個弗一樣，外加有些音節搭實際語音有眼搭弗上？⸺對個。
+          <span className="bf">學堂</span>部分是基本按照吳語學堂個 IPA
+          方案，僅僅是拿弗標準個字母轉成功標準 IPA
+          字母了，並嘸沒改成功更加表音個方案。
         </p>
         <p>
           <span className="bf">學堂</span>
