@@ -40,16 +40,6 @@
   font-size: 80%;
 }
 
-ion-fab-button {
-  width: 2.25em;
-  height: 2.25em;
-}
-
-.fab-horizontal-center {
-  margin-left: unset;
-  margin-inline-start: -50px !important;
-}
-
 h1 {
   letter-spacing: 0.15em;
   font-variation-settings: "wght" 300;

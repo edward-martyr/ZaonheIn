@@ -54,24 +54,6 @@ const About: React.FC = () => {
             </IonRow>
           </IonGrid>
         </p>
-        <h1>資料來源</h1>
-        <p>
-          <span className="bf">推導</span>部分來自我（Nyoeghau）個
-          <a href="https://zhuanlan.zhihu.com/p/386456940">
-            切韻音系自動推導器・推導上海話
-          </a>
-          。
-        </p>
-        <p>
-          <span className="bf">學堂</span>部分來自
-          <a href="https://www.wugniu.com/">吳語學堂</a>個「上海閒話」版塊。感謝
-          <a href="https://www.zhihu.com/people/PapaFrita">飛德</a>
-          對吳語學堂所公開個上海閑話音頻資源個使用許可。
-        </p>
-        {/* <h1>使用注意</h1>
-        <p>
-          請<ruby>弗要<rt>viau</rt></ruby>直接拉取軟件包裏向個<span className="bf">學堂</span>資料。使用前頭還請儂搭渠拉先溝通。
-        </p> */}
         <h1>ＦＡＱｓ</h1>
         <p>
           <span className="bf">學堂</span>部分個ＩＰＡ顯示字體、大小儕弗大一樣？⸺是個。因爲吳語學堂提供個是 .ｓｖｇ 格式個圖片文件，而弗是ＩＰＡ字符。
@@ -80,7 +62,7 @@ const About: React.FC = () => {
           <span className="bf">學堂</span>部分有一些音頻播放弗出？⸺是個。因爲吳語學堂並嘸沒提供字典裏向每一個音個音頻文件。
         </p>
         <IonFab vertical="bottom" horizontal="end" slot="fixed">
-          <IonFabButton href="/home" routerDirection="root">
+          <IonFabButton href="/home" routerDirection="root" translucent={true} size="small">
             <IonIcon icon={homeOutline} />
           </IonFabButton>
         </IonFab>

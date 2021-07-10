@@ -15,6 +15,7 @@ import {
   IonImg,
   IonFab,
   IonFabButton,
+  IonFabList,
 } from "@ionic/react";
 import { Keyboard } from "@capacitor/keyboard";
 import ZyEntry from "../components/ZyEntry";
@@ -23,7 +24,14 @@ import "./Page.css";
 import { useState } from "react";
 
 import "../components/Accordian.css";
-import { chevronDownSharp, chevronUpSharp, helpOutline } from "ionicons/icons";
+import {
+  chevronDownSharp,
+  chevronUpSharp,
+  chevronBackOutline,
+  helpOutline,
+  volumeHighOutline,
+  informationSharp,
+} from "ionicons/icons";
 
 import { phinins2zys } from "../scripts/process_wugniu_zaonhe.js";
 
@@ -151,9 +159,20 @@ const Home: React.FC = () => {
       <IonContent fullscreen class="ion-padding">
         {entries}
         <IonFab vertical="bottom" horizontal="end" slot="fixed">
-          <IonFabButton href="/about">
-            <IonIcon icon={helpOutline} />
+          <IonFabButton translucent={true} size="small">
+            <IonIcon icon={chevronBackOutline} />
           </IonFabButton>
+          <IonFabList side="start">
+            <IonFabButton href="/about" translucent={true} size="small">
+              <IonIcon icon={helpOutline} />
+            </IonFabButton>
+            <IonFabButton href="/Acknowledgement" translucent={true} size="small">
+              <IonIcon icon={informationSharp} />
+            </IonFabButton>
+            <IonFabButton href="/about" translucent={true} size="small">
+              <IonIcon icon={volumeHighOutline} />
+            </IonFabButton>
+          </IonFabList>
         </IonFab>
       </IonContent>
     </IonPage>
