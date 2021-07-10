@@ -24,6 +24,7 @@
 
 .title {
   font-variation-settings: "wght" 420;
+  text-align: right;
 }
 
 .searchbar-input {

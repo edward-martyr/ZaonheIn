@@ -10,6 +10,8 @@ import {
   IonGrid,
   IonRow,
   IonCol,
+  IonButtons,
+  IonBackButton,
 } from "@ionic/react";
 import "./Page.css";
 import { homeOutline } from "ionicons/icons";
@@ -19,8 +21,14 @@ const About: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
+          <IonButtons slot="start">
+            <IonBackButton />
+          </IonButtons>
           <IonTitle className="title">關於上海音</IonTitle>
         </IonToolbar>
+        {/* <IonToolbar>
+          <IonTitle className="title">關於上海音</IonTitle>
+        </IonToolbar> */}
       </IonHeader>
       <IonContent fullscreen class="ion-padding">
         <h1>
@@ -56,10 +64,13 @@ const About: React.FC = () => {
         </p>
         <h1>ＦＡＱｓ</h1>
         <p>
-          <span className="bf">學堂</span>部分個ＩＰＡ顯示字體、大小儕弗大一樣？⸺是個。因爲吳語學堂提供個是 .ｓｖｇ 格式個圖片文件，而弗是ＩＰＡ字符。
+          <span className="bf">學堂</span>
+          部分個ＩＰＡ顯示字體、大小儕弗大一樣？⸺是個。因爲吳語學堂提供個是
+          .ｓｖｇ 格式個圖片文件，而弗是ＩＰＡ字符。
         </p>
         <p>
-          <span className="bf">學堂</span>部分有一些音頻播放弗出？⸺是個。因爲吳語學堂並嘸沒提供字典裏向每一個音個音頻文件。
+          <span className="bf">學堂</span>
+          部分有一些音頻播放弗出？⸺是個。因爲吳語學堂並嘸沒提供字典裏向每一個音個音頻文件。
         </p>
         {/* <IonFab vertical="bottom" horizontal="end" slot="fixed">
           <IonFabButton href="/home" routerDirection="root" translucent={true} size="small">
