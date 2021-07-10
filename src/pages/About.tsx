@@ -32,7 +32,7 @@ const About: React.FC = () => {
         </h1>
         <p>
           點擊<span className="bf">學堂</span>
-          項目下頭個拼音或者ＩＰＡ，就可以聽着發音𡂿〜
+          項目下頭個拼音或者 IPA，就可以聽着發音𡂿〜
         </p>
         <p>
           選擇<span className="bf">學堂式吳拼</span>
@@ -58,8 +58,7 @@ const About: React.FC = () => {
         <h1>ＦＡＱｓ</h1>
         <p>
           <span className="bf">學堂</span>
-          部分個ＩＰＡ顯示字體、大小儕弗大一樣？⸺是個。因爲吳語學堂提供個是
-          .ｓｖｇ 格式個圖片文件，而弗是ＩＰＡ字符。
+          部分個 IPA 方案搭<span className="bf">推導</span>部分個弗一樣，外加有些音節搭實際語音有眼搭弗上？⸺對個。<span className="bf">學堂</span>部分是基本按照吳語學堂個 IPA 方案，僅僅是拿弗標準個字母轉成標準 IPA 字母了，並嘸沒改成功更加表音個方案。
         </p>
         <p>
           <span className="bf">學堂</span>

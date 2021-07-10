@@ -37,7 +37,7 @@ const Acknowledgement: React.FC = () => {
           、以及 <a href="https://github.com/nk2028">nk2028</a> 個 qieyun-js。
         </p>
         <p>
-          <span className="bf">返回所有異體字</span>功能來自 nk2028 個 yitizi。
+          <span className="bf">返回所有異體字</span>功能來自 <a href="https://github.com/nk2028">nk2028</a> 個 yitizi。
         </p>
       </IonContent>
     </IonPage>
