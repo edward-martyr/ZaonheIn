@@ -4,9 +4,8 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
-  IonIcon,
-  IonFab,
-  IonFabButton,
+  IonButtons,
+  IonBackButton,
 } from "@ionic/react";
 import "./Page.css";
 import { homeOutline } from "ionicons/icons";
@@ -17,6 +16,9 @@ const Acknowledgement: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonTitle className="title">資料</IonTitle>
+          <IonButtons slot="start">
+            <IonBackButton />
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen class="ion-padding">
@@ -38,11 +40,6 @@ const Acknowledgement: React.FC = () => {
         <p>
           <span className="bf">返回所有異體字</span>功能來自 nk2028 個 yitizi。
         </p>
-        {/* <IonFab vertical="bottom" horizontal="end" slot="fixed">
-          <IonFabButton href="/home" routerDirection="root" translucent={true} size="small">
-            <IonIcon icon={homeOutline} />
-          </IonFabButton>
-        </IonFab> */}
       </IonContent>
     </IonPage>
   );

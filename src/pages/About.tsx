@@ -4,9 +4,6 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
-  IonIcon,
-  IonFab,
-  IonFabButton,
   IonGrid,
   IonRow,
   IonCol,
@@ -14,21 +11,17 @@ import {
   IonBackButton,
 } from "@ionic/react";
 import "./Page.css";
-import { homeOutline } from "ionicons/icons";
 
 const About: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
+          <IonTitle className="title">關於上海音</IonTitle>
           <IonButtons slot="start">
             <IonBackButton />
           </IonButtons>
-          <IonTitle className="title">關於上海音</IonTitle>
         </IonToolbar>
-        {/* <IonToolbar>
-          <IonTitle className="title">關於上海音</IonTitle>
-        </IonToolbar> */}
       </IonHeader>
       <IonContent fullscreen class="ion-padding">
         <h1>
@@ -72,11 +65,6 @@ const About: React.FC = () => {
           <span className="bf">學堂</span>
           部分有一些音頻播放弗出？⸺是個。因爲吳語學堂並嘸沒提供字典裏向每一個音個音頻文件。
         </p>
-        {/* <IonFab vertical="bottom" horizontal="end" slot="fixed">
-          <IonFabButton href="/home" routerDirection="root" translucent={true} size="small">
-            <IonIcon icon={homeOutline} />
-          </IonFabButton>
-        </IonFab> */}
       </IonContent>
     </IonPage>
   );

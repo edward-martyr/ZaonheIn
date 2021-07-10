@@ -24,7 +24,6 @@
 
 .title {
   font-variation-settings: "wght" 420;
-  text-align: right;
 }
 
 .searchbar-input {
@@ -39,6 +38,10 @@
 .tsyseh {
   font-variation-settings: "wght" 350;
   font-size: 80%;
+}
+
+ion-back-button {
+  display: block;
 }
 
 h1 {
@@ -58,7 +61,7 @@ p {
 }
 
 a {
-  color: black;
+  color: var(--ion-color-light-contrast);
 }
 
 rt {
