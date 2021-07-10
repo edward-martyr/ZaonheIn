@@ -8,7 +8,6 @@ import {
   IonBackButton,
 } from "@ionic/react";
 import "./Page.css";
-import { homeOutline } from "ionicons/icons";
 
 const Acknowledgement: React.FC = () => {
   return (

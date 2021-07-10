@@ -1,11 +1,6 @@
 // 根据搜索内容输出字及所有解释
 import "./ZyEntry.css";
-import {
-  IonItem,
-  IonLabel,
-  IonAvatar,
-  IonList,
-} from "@ionic/react";
+import { IonItem, IonLabel, IonAvatar, IonList } from "@ionic/react";
 
 import { zaonhe_tsonpha, wugniu_zaonhe } from "./SearchFunctions";
 
@@ -72,7 +67,7 @@ const ZyEntry = (zys: string) => {
         <IonItem key={zy} class="vucihku">
           無結果
         </IonItem>,
-      ])
+      ]);
     }
   }
   return <IonList>{entries}</IonList>;
