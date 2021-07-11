@@ -68,8 +68,14 @@ const Home: React.FC = () => {
       if (yithiOnProto) setYithiOn(yithiOnProto);
     })();
     (async () => {
-      let searchTextProto = await storage.get("searchText");
-      setSearchText(searchTextProto!);
+      (function () {
+        setTimeout(function () {
+          let searchTextProtoPromise = storage.get("searchText");
+          searchTextProtoPromise.then((chi) => {
+            setSearchText(chi!);
+          });
+        }, 100);
+      })();
     })();
   }
 
