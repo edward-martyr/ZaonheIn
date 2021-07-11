@@ -1,6 +1,5 @@
 import wugniu_zaonhe_data from "../data/wugniu/wugniu_zaonhe_data";
 import { Toast } from "@capacitor/toast";
-import { waitFor } from "@testing-library/react";
 
 function wugniu_zaonhe_getPhinin(zy) {
   var tshubu = [];
