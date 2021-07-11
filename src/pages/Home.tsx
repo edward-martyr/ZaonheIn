@@ -49,7 +49,7 @@ storage.create();
 
 const Home: React.FC = () => {
   const ionRouter = useIonRouter();
-  document.addEventListener("backButton", () => {
+  document.addEventListener("ionBackButton", () => {
     if (!ionRouter.canGoBack()) {
       App.exitApp();
     }
@@ -67,10 +67,10 @@ const Home: React.FC = () => {
       let yithiOnProto = await storage.get("yithiOn");
       if (yithiOnProto) setYithiOn(yithiOnProto);
     })();
-    (async () => {
-      let searchTextProto = await storage.get("searchText");
-      if (searchTextProto) setSearchText(searchTextProto);
-    })();
+    // (async () => {
+    //   let searchTextProto = await storage.get("searchText"); // will cause text unable to be cleared due to the delay in getting storage
+    //   if (searchTextProto) setSearchText(searchTextProto);
+    // })();
   }
 
   const [seusohSieghaon, setSeusohSieghaon] = useState([<span key=""></span>]);
@@ -157,10 +157,10 @@ const Home: React.FC = () => {
             value={searchText}
             onIonChange={(e) => {
               setSearchText(e.detail.value!);
-              storage.set("searchText", e.detail.value!);
             }}
             onKeyUp={(e: any) => {
               if (e.key === "Enter") {
+                storage.set("searchText", e.detail.value!);
                 // setSearchText(e.target.value!);
                 // Keyboard.hide(); // not implemented on Web
               }
@@ -219,7 +219,7 @@ const Home: React.FC = () => {
             >
               <IonIcon icon={informationSharp} />
             </IonFabButton>
-            <IonFabButton href="/about" translucent={true} size="small">
+            <IonFabButton href="/voice" translucent={true} size="small">
               <IonIcon icon={volumeHighOutline} />
             </IonFabButton>
           </IonFabList>
