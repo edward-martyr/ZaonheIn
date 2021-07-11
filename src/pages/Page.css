@@ -23,6 +23,7 @@
 }
 
 .title {
+  font-weight: normal;
   font-variation-settings: "wght" 420;
 }
 
@@ -41,6 +42,17 @@
   display: inline-block;
   transform: scale(0.85, 1);
   transform-origin: 0 0;
+}
+
+.dohinSiezeh {
+  font-size: 1em;
+  padding: -1em 0em;
+  /* height: 1em; */
+}
+
+.selectAvatar {
+  vertical-align: middle;
+  padding: 0.5ex 0;
 }
 
 ion-back-button {
