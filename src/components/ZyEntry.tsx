@@ -62,13 +62,13 @@ const ZyEntry = (zys: string) => {
         </IonItem>,
       ]);
     }
-    if (entries.length === 0) {
-      entries.push([
-        <IonItem key={zy} class="vucihku">
-          無結果
-        </IonItem>,
-      ]);
-    }
+  }
+  if (entries.length === 0) {
+    entries.push([
+      <IonItem key="vu" class="vucihku">
+        無結果
+      </IonItem>,
+    ]);
   }
   return <IonList>{entries}</IonList>;
 };
