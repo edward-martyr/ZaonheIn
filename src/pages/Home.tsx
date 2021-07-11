@@ -73,9 +73,12 @@ const Home: React.FC = () => {
     })();
   }
 
-  const [seusohSieghaon, setSeusohSieghaon, seusohSieghaonRef] = useStateRef([<span key=""></span>]);
+  const [seusohSieghaon, setSeusohSieghaon, seusohSieghaonRef] = useStateRef([
+    <span key=""></span>,
+  ]);
 
-  const [搜索方式Clicked, set搜索方式Clicked, 搜索方式ClickedRef] = useStateRef(0);
+  const [搜索方式Clicked, set搜索方式Clicked, 搜索方式ClickedRef] =
+    useStateRef(0);
 
   const [chevron, setChevron, chevronRef] = useStateRef(chevronDownSharp);
 
