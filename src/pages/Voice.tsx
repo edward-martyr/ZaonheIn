@@ -23,24 +23,10 @@ import {
   playAudio,
 } from "../scripts/process_wugniu_zaonhe.js";
 
-// import { useState } from "react";
+import useStateRef from "../scripts/useStateRef";
 import { Storage } from "@ionic/storage";
 
 import { playOutline } from "ionicons/icons";
-
-var React = require("react");
-function useStateRef(defaultValue: any) {
-  var [state, setState] = React.useState(defaultValue);
-  var ref = React.useRef(state);
-
-  var dispatch = React.useCallback(function (val: any) {
-    ref.current = typeof val === "function" ? val(ref.current) : val;
-
-    setState(ref.current);
-  }, []);
-
-  return [state, dispatch, ref];
-}
 
 const storage = new Storage();
 storage.create();
@@ -72,7 +58,7 @@ const Voice: React.FC = () => {
     tmp[parseInt(index)] = naiyou;
     setDohins(tmp);
   }
-  function tuinzyEntry(tuinzys: string[][]) {
+  function tuinzyEntry(tuinzys: string[][]) { // [['1']]
     let toReturn = [];
     for (let zyindex in tuinzys) {
       let tuinzy = tuinzys[zyindex];
