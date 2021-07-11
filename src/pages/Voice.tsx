@@ -165,7 +165,7 @@ const Voice: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen class="ion-padding">
-        <h1>多音字讀音選擇</h1>
+        {/* <h1>多音字讀音選擇</h1> */}
         <IonButton // unable to function with one click
           expand="full"
           onClick={(e) => {
