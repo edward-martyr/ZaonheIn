@@ -169,7 +169,7 @@ const Voice: React.FC = () => {
             }
           }}
         >
-          直接選擇排名第一個讀音
+          儕揀排名第一個讀音
         </IonButton>
         {/*  */}
         <IonList>{tuinzyEntry(tuinzys)}</IonList>
