@@ -33,8 +33,14 @@ storage.create();
 
 const Voice: React.FC = () => {
   const [searchText, setSearchText, searchTextRef] = useStateRef("");
+  if (searchTextRef.current === "") {
+    (async () => {
+      let searchTextProto = await storage.get("searchText");
+      setSearchText(searchTextProto!);
+    })();
+  }
 
-  let searchTextSplitted = searchText.split("");
+  let searchTextSplitted = searchTextRef.current.split("");
   let tuinzys: string[][] = [];
   let firstIns: string[] = [];
   for (let zyindex in searchTextSplitted) {
@@ -58,7 +64,8 @@ const Voice: React.FC = () => {
     tmp[parseInt(index)] = naiyou;
     setDohins(tmp);
   }
-  function tuinzyEntry(tuinzys: string[][]) { // [['1']]
+  function tuinzyEntry(tuinzys: string[][]) {
+    // [['1']]
     let toReturn = [];
     for (let zyindex in tuinzys) {
       let tuinzy = tuinzys[zyindex];
@@ -133,15 +140,15 @@ const Voice: React.FC = () => {
         <IonToolbar className="searchbar-toolbar">
           <IonSearchbar
             className="searchbar-input"
-            value={searchText}
+            value={searchTextRef.current}
             onIonChange={(e) => {
               setSearchText(e.detail.value!);
               setDohins([""]);
-              // dohins = [];
+              storage.set("searchText", e.detail.value!);
             }}
             onKeyUp={(e: any) => {
               if (e.key === "Enter") {
-                storage.set("searchText", e.detail.value!);
+                // storage.set("searchText", e.detail.value!);
                 setDohins([""]);
                 // Keyboard.hide(); // not implemented on Web
               }

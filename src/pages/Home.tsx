@@ -19,7 +19,7 @@ import { Keyboard } from "@capacitor/keyboard";
 import ZyEntry from "../components/ZyEntry";
 import "./Page.css";
 
-import { useState } from "react";
+import useStateRef from "../scripts/useStateRef";
 import { Storage } from "@ionic/storage";
 
 import "../components/Accordian.css";
@@ -55,10 +55,10 @@ const Home: React.FC = () => {
     }
   });
 
-  const [searchText, setSearchText] = useState("");
-  const [seusohBy, setSeusohBy] = useState("漢字");
-  const [yithiOn, setYithiOn] = useState("弗轉換");
-  if (searchText === "") {
+  const [searchText, setSearchText, searchTextRef] = useStateRef("");
+  const [seusohBy, setSeusohBy, seusohByRef] = useStateRef("漢字");
+  const [yithiOn, setYithiOn, yithiOnRef] = useStateRef("弗轉換");
+  if (searchTextRef.current === "") {
     (async () => {
       let seusohByProto = await storage.get("seusohBy");
       if (seusohByProto) setSeusohBy(seusohByProto);
@@ -67,44 +67,44 @@ const Home: React.FC = () => {
       let yithiOnProto = await storage.get("yithiOn");
       if (yithiOnProto) setYithiOn(yithiOnProto);
     })();
-    // (async () => {
-    //   let searchTextProto = await storage.get("searchText"); // will cause text unable to be cleared due to the delay in getting storage
-    //   if (searchTextProto) setSearchText(searchTextProto);
-    // })();
+    (async () => {
+      let searchTextProto = await storage.get("searchText");
+      setSearchText(searchTextProto!);
+    })();
   }
 
-  const [seusohSieghaon, setSeusohSieghaon] = useState([<span key=""></span>]);
+  const [seusohSieghaon, setSeusohSieghaon, seusohSieghaonRef] = useStateRef([<span key=""></span>]);
 
-  const [搜索方式Clicked, set搜索方式Clicked] = useState(0);
+  const [搜索方式Clicked, set搜索方式Clicked, 搜索方式ClickedRef] = useStateRef(0);
 
-  const [chevron, setChevron] = useState(chevronDownSharp);
+  const [chevron, setChevron, chevronRef] = useStateRef(chevronDownSharp);
 
   var entries;
 
-  if (searchText) {
-    if (seusohBy === "漢字") {
-      if (yithiOn === "返回所有異體字") {
-        let searchTextVar = searchText.split("");
+  if (searchTextRef.current) {
+    if (seusohByRef.current === "漢字") {
+      if (yithiOnRef.current === "返回所有異體字") {
+        let searchTextVar = searchTextRef.current.split("");
         let searchTextYithi = searchTextVar;
-        searchTextVar.forEach(function (part, index, theArray) {
+        searchTextVar.forEach(function (part: any, index: any, theArray: any) {
           searchTextYithi = searchTextYithi.concat(Yitizi.get(theArray[index]));
         });
         let newSearchText = searchTextYithi.join("");
         entries = ZyEntry(newSearchText);
-      } else if (yithiOn === "弗轉換") {
-        entries = ZyEntry(searchText);
+      } else if (yithiOnRef.current === "弗轉換") {
+        entries = ZyEntry(searchTextRef.current);
       }
     } else {
-      if (yithiOn === "返回所有異體字") {
-        let searchTextVar = phinins2zys(searchText).split("");
+      if (yithiOnRef.current === "返回所有異體字") {
+        let searchTextVar = phinins2zys(searchTextRef.current).split("");
         let searchTextYithi = searchTextVar;
         searchTextVar.forEach(function (part, index, theArray) {
           searchTextYithi = searchTextYithi.concat(Yitizi.get(theArray[index]));
         });
         let newSearchText = searchTextYithi.join("");
         entries = ZyEntry(newSearchText);
-      } else if (yithiOn === "弗轉換") {
-        entries = ZyEntry(phinins2zys(searchText));
+      } else if (yithiOnRef.current === "弗轉換") {
+        entries = ZyEntry(phinins2zys(searchTextRef.current));
       }
     }
   } else {
@@ -117,7 +117,7 @@ const Home: React.FC = () => {
       <IonSelect
         // class="ripple"
         interface="popover"
-        value={seusohBy}
+        value={seusohByRef.current}
         onIonChange={(e) => {
           setSeusohBy(e.detail.value);
           storage.set("seusohBy", e.detail.value!);
@@ -133,7 +133,7 @@ const Home: React.FC = () => {
       <IonSelect
         // class="ripple"
         interface="popover"
-        value={yithiOn}
+        value={yithiOnRef.current}
         onIonChange={(e) => {
           setYithiOn(e.detail.value!);
           storage.set("yithiOn", e.detail.value!);
@@ -154,13 +154,14 @@ const Home: React.FC = () => {
         <IonToolbar className="searchbar-toolbar">
           <IonSearchbar
             className="searchbar-input"
-            value={searchText}
+            value={searchTextRef.current}
             onIonChange={(e) => {
               setSearchText(e.detail.value!);
+              storage.set("searchText", e.detail.value!);
             }}
             onKeyUp={(e: any) => {
               if (e.key === "Enter") {
-                storage.set("searchText", e.detail.value!);
+                // storage.set("searchText", e.detail.value!);
                 // setSearchText(e.target.value!);
                 // Keyboard.hide(); // not implemented on Web
               }
@@ -176,7 +177,7 @@ const Home: React.FC = () => {
             <IonListHeader
               class="ripple"
               onMouseUp={(e: any) => {
-                if (搜索方式Clicked === 1) {
+                if (搜索方式ClickedRef.current === 1) {
                   setSeusohSieghaon([<span key=""></span>]);
                   set搜索方式Clicked(0);
                   setChevron(chevronDownSharp);
@@ -188,12 +189,12 @@ const Home: React.FC = () => {
               }}
             >
               選項　
-              <IonIcon icon={chevron} />　
+              <IonIcon icon={chevronRef.current} />　
               <span className="tsyseh">
-                {seusohBy}・{yithiOn}
+                {seusohByRef.current}・{yithiOnRef.current}
               </span>
             </IonListHeader>
-            {seusohSieghaon}
+            {seusohSieghaonRef.current}
           </IonList>
         </IonToolbar>
       </IonHeader>
