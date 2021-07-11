@@ -1,5 +1,6 @@
 import wugniu_zaonhe_data from "../data/wugniu/wugniu_zaonhe_data";
 import { Toast } from "@capacitor/toast";
+import { waitFor } from "@testing-library/react";
 
 function wugniu_zaonhe_getPhinin(zy) {
   var tshubu = [];
@@ -29,14 +30,14 @@ function wugniu_zaonhe_getPhinin(zy) {
 function phinins2zys(rawPhinins) {
   var phinins = rawPhinins.split(" ");
   var zys = [];
-  let phininSuzys = []
+  let phininSuzys = [];
   for (var phininInput of phinins) {
-    if (! '15678'.includes(phininInput.slice(-1))) {
-      for (let suzy of '15678') {
-        phininSuzys.push(phininInput+suzy)
+    if (!"15678".includes(phininInput.slice(-1))) {
+      for (let suzy of "15678") {
+        phininSuzys.push(phininInput + suzy);
       }
     } else {
-      phininSuzys.push(phininInput)
+      phininSuzys.push(phininInput);
     }
   }
 
@@ -117,8 +118,7 @@ function wugniu2IPA(wugniu) {
   return "/" + result + "/";
 }
 
-function phinin2PlayAudio(phinin) {
-  var audio = new Audio("assets/audios/" + phinin + ".mp3");
+function playAudio(audio) {
   var playPromise = audio.play();
   if (playPromise !== undefined) {
     playPromise
@@ -134,6 +134,10 @@ function phinin2PlayAudio(phinin) {
       });
   }
 }
+function phinin2PlayAudio(phinin) {
+  var audio = new Audio("assets/audios/" + phinin + ".mp3");
+  playAudio(audio);
+}
 
 export {
   wugniu_zaonhe_getPhinin,
@@ -141,4 +145,5 @@ export {
   // phinin2IPA,
   phinin2PlayAudio,
   wugniu2IPA,
+  playAudio,
 };

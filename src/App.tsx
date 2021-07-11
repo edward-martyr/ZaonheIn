@@ -4,6 +4,7 @@ import { IonReactRouter } from "@ionic/react-router";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Acknowledgement from "./pages/Acknowledgement";
+import Voice from "./pages/Voice";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -39,6 +40,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/acknowledgement">
           <Acknowledgement />
+        </Route>
+        <Route exact path="/voice">
+          <Voice />
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>
