@@ -55,6 +55,15 @@
   padding: 0.5ex 0;
 }
 
+.example {
+  background-color: darkgrey;
+  font-size: 80%;
+}
+
+.checkLabel {
+  font-size: 80%;
+}
+
 ion-back-button {
   display: block;
 }

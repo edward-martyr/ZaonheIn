@@ -55,6 +55,7 @@ const About: React.FC = () => {
             </IonRow>
           </IonGrid>
         </p>
+        {/* <p></p> */}
         <h1>ＦＡＱｓ</h1>
         <p>
           <span className="bf">學堂</span>

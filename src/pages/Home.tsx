@@ -166,7 +166,7 @@ const Home: React.FC = () => {
               if (e.key === "Enter") {
                 // storage.set("searchText", e.detail.value!);
                 // setSearchText(e.target.value!);
-                // Keyboard.hide(); // not implemented on Web
+                Keyboard.hide(); // not implemented on Web
               }
             }}
             showCancelButton="never"
