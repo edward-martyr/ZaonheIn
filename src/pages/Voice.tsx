@@ -14,7 +14,6 @@ import {
   IonItem,
   IonButton,
   IonIcon,
-  IonLabel,
 } from "@ionic/react";
 import "./Page.css";
 import { Keyboard } from "@capacitor/keyboard";
@@ -68,7 +67,6 @@ const Voice: React.FC = () => {
   }
 
   const [dohins, setDohins, dohinsRef] = useStateRef(firstIns);
-  // console.log(dohins, firstIns);
   function setDohinIndex(index: string, naiyou: string) {
     let tmp = Array.from(dohinsRef.current);
     tmp[parseInt(index)] = naiyou;
@@ -169,17 +167,17 @@ const Voice: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen class="ion-padding">
+        <h1>多音字讀音選擇</h1>
         <IonButton // unable to function with one click
+          expand="full"
           onClick={(e) => {
             while (dohinsRef.current !== firstIns) {
               setDohins(firstIns);
-              console.log(dohinsRef.current);
             }
           }}
         >
-          as
+          直接選擇排名第一個讀音
         </IonButton>
-        <h1>多音字讀音選擇</h1>
         {/*  */}
         <IonList>{tuinzyEntry(tuinzys)}</IonList>
         {/*  */}
