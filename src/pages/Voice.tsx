@@ -16,6 +16,7 @@ import {
   IonIcon,
 } from "@ionic/react";
 import "./Page.css";
+import { Keyboard } from "@capacitor/keyboard";
 
 import {
   wugniu_zaonhe_getPhinin,
@@ -130,7 +131,7 @@ const Voice: React.FC = () => {
             onKeyUp={(e: any) => {
               if (e.key === "Enter") {
                 storage.set("searchText", e.detail.value!);
-                // Keyboard.hide(); // not implemented on Web
+                Keyboard.hide(); // not implemented on Web
               }
             }}
             showCancelButton="never"
