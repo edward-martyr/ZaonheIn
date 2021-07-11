@@ -40,7 +40,12 @@ const Voice: React.FC = () => {
     })();
   }
 
-  let searchTextSplitted = searchTextRef.current.split("");
+  let searchTextSplitted;
+  if (searchTextRef.current) {
+    searchTextSplitted = searchTextRef.current.split("");
+  } else {
+    searchTextSplitted = [""];
+  }
   let tuinzys: string[][] = [];
   let firstIns: string[] = [];
   for (let zyindex in searchTextSplitted) {
