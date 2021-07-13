@@ -1,4 +1,4 @@
-import { Redirect, Route } from "react-router-dom";
+import { Redirect, Route, useHistory } from "react-router-dom";
 import { IonApp, IonRouterOutlet } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import Home from "./pages/Home";
@@ -32,72 +32,35 @@ import { Storage } from "@ionic/storage";
 const storage = new Storage();
 storage.create();
 
-// (async () => {
-//   await storage.clear(); // debug storage
-// })();
+// storage.clear()
 
 const App: React.FC = () => {
-  const [ifOpened, setIfOpened, ifOpenedRef] = useStateRef(false);
-  (async () => {
-    let test = await storage.get("ifOpened");
-    setIfOpened(!test);
-  })();
-
-  if (ifOpened) {
-    return (
-      <IonApp>
-        <IonReactRouter>
-          <IonRouterOutlet>
-            <Route exact path="/home">
-              <Redirect to="/orientation" />
-            </Route>
-            <Route exact path="/">
-              <Redirect to="/orientation" />
-            </Route>
-            <Route exact path="/about">
-              <About />
-            </Route>
-            <Route exact path="/acknowledgement">
-              <Acknowledgement />
-            </Route>
-            <Route exact path="/voice">
-              <Voice />
-            </Route>
-            <Route exact path="/orientation">
-              <Orientation />
-            </Route>
-          </IonRouterOutlet>
-        </IonReactRouter>
-      </IonApp>
-    );
-  } else {
-    return (
-      <IonApp>
-        <IonReactRouter>
-          <IonRouterOutlet>
-            <Route exact path="/home">
-              <Home />
-            </Route>
-            <Route exact path="/">
-              <Redirect to="/home" />
-            </Route>
-            <Route exact path="/about">
-              <About />
-            </Route>
-            <Route exact path="/acknowledgement">
-              <Acknowledgement />
-            </Route>
-            <Route exact path="/voice">
-              <Voice />
-            </Route>
-            <Route exact path="/orientation">
-              <Redirect to="/home" />
-            </Route>
-          </IonRouterOutlet>
-        </IonReactRouter>
-      </IonApp>
-    );
-  }
+  return (
+    <IonApp>
+      <IonReactRouter>
+        <IonRouterOutlet>
+          <Route exact path="/home">
+            <Home />
+          </Route>
+          <Route exact path="/">
+            <Redirect to="/home" />
+          </Route>
+          <Route exact path="/about">
+            <About />
+          </Route>
+          <Route exact path="/acknowledgement">
+            <Acknowledgement />
+          </Route>
+          <Route exact path="/voice">
+            <Voice />
+          </Route>
+          <Route exact path="/orientation">
+            <Orientation />
+          </Route>
+        </IonRouterOutlet>
+      </IonReactRouter>
+    </IonApp>
+  );
 };
 
 export default App;

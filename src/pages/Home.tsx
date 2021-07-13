@@ -43,9 +43,7 @@ const Yitizi = require("yitizi");
 const storage = new Storage();
 storage.create();
 
-// (async () => {
-//   await storage.clear(); // debug storage
-// })();
+// storage.clear(); // debug storage
 
 const Home: React.FC = () => {
   const ionRouter = useIonRouter();
@@ -54,6 +52,11 @@ const Home: React.FC = () => {
       App.exitApp();
     }
   });
+
+  (async () => {
+    let ifOpened = await storage.get("ifOpened");
+    if (!ifOpened) window.location.assign("/orientation");
+  })();
 
   const [searchText, setSearchText, searchTextRef] = useStateRef("");
   const [seusohBy, setSeusohBy, seusohByRef] = useStateRef("漢字");
@@ -215,7 +218,7 @@ const Home: React.FC = () => {
           </IonFabButton>
           <IonFabList side="start">
             <IonFabButton
-              href="/about"
+              routerLink="/about"
               translucent={true}
               size="small"
               routerDirection="forward"
@@ -223,13 +226,13 @@ const Home: React.FC = () => {
               <IonIcon icon={helpOutline} />
             </IonFabButton>
             <IonFabButton
-              href="/Acknowledgement"
+              routerLink="/Acknowledgement"
               translucent={true}
               size="small"
             >
               <IonIcon icon={informationSharp} />
             </IonFabButton>
-            <IonFabButton href="/voice" translucent={true} size="small">
+            <IonFabButton routerLink="/voice" translucent={true} size="small">
               <IonIcon icon={volumeHighOutline} />
             </IonFabButton>
           </IonFabList>

@@ -161,7 +161,7 @@ const Orientation: React.FC = () => {
           </span>
         </IonItem>
 
-        <IonButton expand="full" href="/" disabled={!checked}>
+        <IonButton expand="full" routerLink="/" disabled={!checked}>
           開始使用
         </IonButton>
       </IonContent>
