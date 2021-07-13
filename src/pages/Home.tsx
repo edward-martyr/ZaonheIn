@@ -55,7 +55,9 @@ const Home: React.FC = () => {
 
   (async () => {
     let ifOpened = await storage.get("ifOpened");
-    if (!ifOpened) window.location.assign("/orientation");
+    if (!ifOpened) {
+      window.location.assign("orientation");
+    }
   })();
 
   const [searchText, setSearchText, searchTextRef] = useStateRef("");
