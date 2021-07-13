@@ -45,6 +45,13 @@ storage.create();
 
 // storage.clear(); // debug storage
 
+(async () => {
+  let ifOpened = await storage.get("ifOpened");
+  if (ifOpened !== "opened") {
+    window.location.assign("orientation");
+  }
+})();
+
 const Home: React.FC = () => {
   const ionRouter = useIonRouter();
   document.addEventListener("ionBackButton", () => {
@@ -52,13 +59,6 @@ const Home: React.FC = () => {
       App.exitApp();
     }
   });
-
-  (async () => {
-    let ifOpened = await storage.get("ifOpened");
-    if (!ifOpened) {
-      window.location.assign("orientation");
-    }
-  })();
 
   const [searchText, setSearchText, searchTextRef] = useStateRef("");
   const [seusohBy, setSeusohBy, seusohByRef] = useStateRef("漢字");
