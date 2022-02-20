@@ -3,19 +3,209 @@
   src: url("../fonts/SourceSansVariable-Roman-subset.woff");
 }
 
-@font-face {
+/* @font-face {
   font-family: "Source Han Sans Variable";
   src: url("../fonts/SourceHanSansKVF-ExtraLight-subset.woff");
   font-language-override: "KOR";
+} */
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.CJK-Radicals-Supplement.woff2) format('woff2');
+  unicode-range: U+2e80-2e99, U+2e9b-2ef3;
 }
 
 @font-face {
-  font-family: "I.Ming";
-  src: url("../fonts/I.Ming-Regular-subset.ttf");
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.Kangxi-Radicals.woff2) format('woff2');
+  unicode-range: U+2f00-2fd5;
 }
 
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.Ideographic-Description-Characters.woff2) format('woff2');
+  unicode-range: U+2ff0-2ffb;
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.CJK-Symbols-and-Punctuation.woff2) format('woff2');
+  unicode-range: U+3000-303f;
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.Hiragana.woff2) format('woff2');
+  unicode-range: U+3041-3096, U+3099-309f;
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.Katakana.woff2) format('woff2');
+  unicode-range: U+30a0-30ff;
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.Bopomofo.woff2) format('woff2');
+  unicode-range: U+3105-312f;
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.Hangul-Compatibility-Jamo.woff2) format('woff2');
+  unicode-range: U+3131-318e;
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.Kanbun.woff2) format('woff2');
+  unicode-range: U+3190-319f;
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.Bopomofo-Extended.woff2) format('woff2');
+  unicode-range: U+31a0-31bb;
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.CJK-Strokes.woff2) format('woff2');
+  unicode-range: U+31c0-31e3;
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.Katakana-Phonetic-Extensions.woff2) format('woff2');
+  unicode-range: U+31f0-31ff;
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.Enclosed-CJK-Letters-and-Months.woff2) format('woff2');
+  unicode-range: U+3200-321e, U+3220-32ff;
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.CJK-Compatibility.woff2) format('woff2');
+  unicode-range: U+3300-332b, U+332d-33ff;
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.CJK-Unified-Ideographs-Extension-A-1.woff2) format('woff2');
+  unicode-range: U+3400-37ff;
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.CJK-Unified-Ideographs-Extension-A-2.woff2) format('woff2');
+  unicode-range: U+3800-3bff;
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.CJK-Unified-Ideographs-Extension-A-3.woff2) format('woff2');
+  unicode-range: U+3c00-3fff;
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.CJK-Unified-Ideographs-Extension-A-4.woff2) format('woff2');
+  unicode-range: U+4000-43ff;
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.CJK-Unified-Ideographs-Extension-A-5.woff2) format('woff2');
+  unicode-range: U+4400-47ff;
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.CJK-Unified-Ideographs-Extension-A-6.woff2) format('woff2');
+  unicode-range: U+4800-4bff;
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.CJK-Unified-Ideographs-Extension-A-7.woff2) format('woff2');
+  unicode-range: U+4c00-4db5;
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.CJK-Unified-Ideographs-1.woff2) format('woff2');
+  unicode-range: U+4e00-51ff;
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.CJK-Unified-Ideographs-2.woff2) format('woff2');
+  unicode-range: U+5200-55ff;
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.CJK-Unified-Ideographs-3.woff2) format('woff2');
+  unicode-range: U+5600-59ff;
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.CJK-Unified-Ideographs-4.woff2) format('woff2');
+  unicode-range: U+5a00-5dff;
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.CJK-Unified-Ideographs-5.woff2) format('woff2');
+  unicode-range: U+5e00-61ff;
+}
+
+@font-face {
+  font-family: "Source Han Sans Variable";
+  font-language-override: "KOR";
+  src: url(../fonts/SourceHanSansKVF-ExtraLight-subset.CJK-Unified-Ideographs-6.woff2) format('woff2');
+  unicode-range: U+6200-648d;
+}
+
+/* @font-face {
+  font-family: "I.Ming";
+  src: url("../fonts/I.Ming-Regular-subset.ttf");
+} */
+
 * {
-  font-family: "Source Sans Variable", "Source Han Sans Variable", "I.Ming";
+  /* font-family: "Source Sans Variable", "Source Han Sans Variable", "I.Ming"; */
+  font-family: "Source Sans Variable", "Source Han Sans Variable";
   font-feature-settings: "palt", "trad";
   font-size: 100.5%;
   /* user-select: auto; */

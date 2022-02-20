@@ -1,0 +1,11 @@
+{
+	"appId": "com.nyoeghau.zaonhein",
+	"appName": "上海音",
+	"webDir": "build",
+	"bundledWebRuntime": false,
+	"SplashScreen": {
+		"launchShowDuration": 0,
+		"launchAutoHide": true,
+		"backgroundColor": "#ffffffff"
+	}
+}
