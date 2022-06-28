@@ -1,6 +1,7 @@
 {
   "name": "zaonhein",
   "version": "1.0.0",
+  "homepage": "https://edward-martyr.github.io/ZaonheIn/",
   "private": true,
   "dependencies": {
     "@capacitor/android": "3.1.1",
@@ -28,7 +29,6 @@
     "@types/react-router": "^5.1.11",
     "@types/react-router-dom": "^5.1.7",
     "ascii-fullwidth-halfwidth-convert": "^0.1.1",
-    "gh-pages": "^3.2.3",
     "ionicons": "^5.4.0",
     "qieyun": "^0.12.2",
     "react": "^17.0.1",
@@ -79,7 +79,8 @@
     ]
   },
   "devDependencies": {
-    "@capacitor/cli": "3.0.2"
+    "@capacitor/cli": "3.0.2",
+    "gh-pages": "^4.0.0"
   },
   "description": "上海音"
 }
