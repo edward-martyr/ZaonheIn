@@ -1,7 +1,7 @@
 {
   "name": "zaonhein",
   "version": "1.0.0",
-  "homepage": "https://edward-martyr.github.io/ZaonheIn/",
+  "homepage": "https://zaonhein.nyoeghau.com/",
   "private": true,
   "dependencies": {
     "@capacitor/android": "3.1.1",
