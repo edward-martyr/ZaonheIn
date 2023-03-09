@@ -29,6 +29,7 @@
     "@types/react-router": "^5.1.11",
     "@types/react-router-dom": "^5.1.7",
     "ascii-fullwidth-halfwidth-convert": "^0.1.1",
+    "caniuse-lite": "^1.0.30001462",
     "ionicons": "^5.4.0",
     "qieyun": "^0.12.2",
     "react": "^17.0.1",
