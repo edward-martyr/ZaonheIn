@@ -48,7 +48,7 @@ storage.create();
 (async () => {
   let ifOpened = await storage.get("ifOpened");
   if (ifOpened !== "opened") {
-    window.location.assign("orientation");
+    window.location.assign("#/orientation");
   }
 })();
 

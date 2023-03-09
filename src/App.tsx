@@ -1,6 +1,6 @@
 import { Redirect, Route, useHistory } from "react-router-dom";
 import { IonApp, IonRouterOutlet } from "@ionic/react";
-import { IonReactRouter } from "@ionic/react-router";
+import { IonReactHashRouter } from "@ionic/react-router";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Acknowledgement from "./pages/Acknowledgement";
@@ -37,7 +37,7 @@ storage.create();
 const App: React.FC = () => {
   return (
     <IonApp>
-      <IonReactRouter>
+      <IonReactHashRouter>
         <IonRouterOutlet>
           <Route exact path="/home">
             <Home />
@@ -58,7 +58,7 @@ const App: React.FC = () => {
             <Orientation />
           </Route>
         </IonRouterOutlet>
-      </IonReactRouter>
+      </IonReactHashRouter>
     </IonApp>
   );
 };
