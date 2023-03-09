@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkzaonhein=self.webpackChunkzaonhein||[]).push([[354],{354:function(n,t,e){e.r(t),e.d(t,{startStatusTap:function(){return r}});var i=e(4792),o=e(3652),r=function(){var n=window;n.addEventListener("statusTap",(function(){(0,i.f)((function(){var t=n.innerWidth,e=n.innerHeight,r=document.elementFromPoint(t/2,e/2);if(r){var u=r.closest("ion-content");u&&new Promise((function(n){return(0,o.c)(u,n)})).then((function(){(0,i.c)((function(){return u.scrollToTop(300)}))}))}}))}))}}}]);
+//# sourceMappingURL=354.16ef1349.chunk.js.map
